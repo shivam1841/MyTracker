@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NEARBY</string>
+    <string name="title_activity_main2">NEARBY</string>
+    <string name="action_settings">Logout</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_individual_map">Map</string>
+    <string name="action_search">Find Friends</string>
+</resources>
