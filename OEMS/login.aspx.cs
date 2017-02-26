@@ -18,7 +18,7 @@ namespace OEMS
         string sql = null;
         SqlDataReader reader;
         Control mainMenu;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,6 +32,9 @@ namespace OEMS
                 mainMenu = Page.Master.FindControl("Menu1");
                 mainMenu.Visible = false;
 
+                Label lbl_welcome_user = this.Master.FindControl("lbl_welcome_user") as Label;
+                lbl_welcome_user.Text = "Please sign in to continue";
+                
                 con = new SqlConnection("Data Source=DESKTOP-6DAVLBI\\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True");
             }
         }
@@ -78,6 +81,7 @@ namespace OEMS
                                     lbl_error.Visible = true;
                                     mainMenu.Visible = true;
                                     Session["username"] = txt_username.Text;
+                                
                                     Response.Redirect("~/user_home.aspx");
                                     break;
                                 }

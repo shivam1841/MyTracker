@@ -11,13 +11,15 @@ namespace OEMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null)
+            if (Session["username"] == null)
             {
-                lbl_username.Text = Session["username"].ToString();
+                Response.Redirect("~/login.aspx");
             }
             else
             {
-                Response.Redirect("~/login.aspx");
+                // do work here
+                Label lbl_welcome_user = this.Master.FindControl("lbl_welcome_user") as Label;
+                lbl_welcome_user.Text = "Welcome, " + Session["username"];
             }
         }
     }

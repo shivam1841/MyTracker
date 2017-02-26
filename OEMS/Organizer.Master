@@ -15,7 +15,7 @@
 </head>
 <body align="center" bgcolor="#D3D3D3">
     <form id="form1" runat="server">
-        <div align="center">
+        <div align="center" style="width: 815px; margin: 0 auto">
             <asp:Image ID="header_image" runat="server" Height="148px" Width="815px" alt="Image not found" ImageAlign="Top" ImageUrl="~/image/header_logo.png" />
 
             <br />
@@ -38,6 +38,11 @@
                 <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="2px" />
                 <StaticSelectedStyle BackColor="#FFCC66" />
             </asp:Menu>
+            </div>
+            <div align="right">
+                <div style="background-color:#E4BA1E" style="width: 250px">
+                    <asp:Label ID="lbl_welcome_user" runat="server" Text="Please sign in to continue" Font-Size="14pt"></asp:Label>
+                </div>
             </div>
             <br />
             <asp:Panel ID="panel_content" runat="server" CssClass="inlineBlock" Width="815px" HorizontalAlign="Left" VerticalAlign="top">

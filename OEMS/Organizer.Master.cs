@@ -9,6 +9,13 @@ namespace OEMS
 {
     public partial class Organizer : System.Web.UI.MasterPage
     {
+        public void setWelcomeUserMessage(string message)
+        {
+                lbl_welcome_user.Visible = true;
+                lbl_welcome_user.Text = message;
+            
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

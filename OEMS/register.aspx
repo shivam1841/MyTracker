@@ -32,7 +32,11 @@
                 <asp:Label ID="Label2" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="16pt" Text="Register New User"></asp:Label>
             </td>
         </tr>
-        <tr>
+         <tr>
+            <td colspan="2">
+                <asp:Label ID="lbl_error_message" runat="server" Text="Error" ForeColor="Red" Visible="False"></asp:Label></td>
+        </tr>
+         <tr>
             <td colspan="2"><hr /></td>
         </tr>
         <tr>
@@ -48,7 +52,7 @@
                 <asp:TextBox ID="txt_username" runat="server" Width="225px"></asp:TextBox>
             </td>
             <td class="auto-style6">
-                <asp:Label ID="lbl_username_star" runat="server" Text="*"></asp:Label>
+                <asp:Label ID="lbl_username_star" runat="server" Text="*" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -59,7 +63,7 @@
                 <asp:TextBox ID="txt_password" runat="server" Width="225px" TextMode="Password"></asp:TextBox>
             </td>
             <td class="auto-style6">
-                <asp:Label ID="lbl_password_star" runat="server" Text="*"></asp:Label>
+                <asp:Label ID="lbl_password_star" runat="server" Text="*" Visible="False"></asp:Label>
             </td>
         </tr>
          <tr>
@@ -70,7 +74,7 @@
                 <asp:TextBox ID="txt_confirm_password" runat="server" Width="225px" TextMode="Password"></asp:TextBox>
             </td>
             <td class="auto-style6">
-                <asp:Label ID="lbl_confirm_password_star" runat="server" Text="*"></asp:Label>
+                <asp:Label ID="lbl_confirm_password_star" runat="server" Text="*" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -90,7 +94,7 @@
                 <asp:TextBox ID="txt_firstname" runat="server" Width="225px"></asp:TextBox>
             </td>
             <td class="auto-style6">
-                <asp:Label ID="lbl_firstname_star" runat="server" Text="*"></asp:Label>
+                <asp:Label ID="lbl_firstname_star" runat="server" Text="*" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -121,7 +125,7 @@
                 <asp:TextBox ID="txt_address1" runat="server" Width="225px" Height="70px" TextMode="MultiLine"></asp:TextBox>
             </td>
             <td valign="top" class="auto-style6">
-                <asp:Label ID="lbl_address1_star" runat="server" Text="*"></asp:Label>
+                <asp:Label ID="lbl_address1_star" runat="server" Text="*" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -198,7 +202,7 @@
                 <asp:TextBox ID="txt_answer" runat="server" Width="225px"></asp:TextBox>
             </td>
             <td class="auto-style1">
-                <asp:Label ID="lbl_answer_star" runat="server" Text="*"></asp:Label>
+                <asp:Label ID="lbl_answer_star" runat="server" Text="*" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
