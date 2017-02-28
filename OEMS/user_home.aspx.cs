@@ -32,10 +32,12 @@ namespace OEMS
                 cmd.Parameters.Add(new SqlParameter("username", Session["username"]));
                 string username = cmd.ExecuteScalar().ToString();
                 con.Close();
+
                 // set the username at top left corner
                 Label lbl_welcome_user = this.Master.FindControl("lbl_welcome_user") as Label;
                 lbl_welcome_user.Text = "Welcome, " + username;//"Welcome, " + Session["username"];
                 //******************************COPY ABOVE CODE IN EVERY PAGE LOAD EVENT************//
+
 
                 // webpage code
             }
