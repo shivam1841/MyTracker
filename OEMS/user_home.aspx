@@ -4,6 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        content area
+        <img src="image/underConstruction.png" alt="Page is under construction." />
     </div>
 </asp:Content>

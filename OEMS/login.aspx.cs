@@ -75,7 +75,7 @@ namespace OEMS
                             //
                             while (reader.Read())
                             {
-                                if (reader.GetString(0) == txt_username.Text && reader.GetString(1) == txt_password.Text)
+                                if (reader.GetString(0) == txt_username.Text.ToLower().Trim() && reader.GetString(1) == txt_password.Text.Trim())
                                 {
                                     lbl_error.Text = "Login successful";
                                     lbl_error.Visible = true;

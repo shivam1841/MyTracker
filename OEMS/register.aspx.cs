@@ -19,6 +19,7 @@ namespace OEMS
         SqlDataReader reader;
         Control mainMenu;
 
+        Boolean isRegistrationValid = false;
         string password = null;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +27,9 @@ namespace OEMS
             // disable the menu before login
             mainMenu = Page.Master.FindControl("Menu1");
             mainMenu.Visible = false;
-            
+
+            success_message.Visible = false;
+
             con = new SqlConnection("Data Source=DESKTOP-6DAVLBI\\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True");
         }
 
@@ -103,9 +106,106 @@ namespace OEMS
                                     lbl_answer_star.Visible = false;
                                     lbl_error_message.Visible = false;
 
-                                    // registration
-                                    lbl_error_message.Text = "success...";
+                                    // proceed to registration
+                                    lbl_error_message.Text = "Signing in...";
                                     lbl_error_message.Visible = true;
+
+                                    // store the user input into variables
+                                    string user_name = txt_username.Text.ToLower().Trim(),
+                                        password = txt_password.Text.Trim(),
+                                        first_name = txt_firstname.Text.Trim(),
+                                        last_name = txt_lastname.Text.Trim(),
+                                        gender = "Male",
+                                        address1 = txt_address1.Text.Trim(),
+                                        address2 = txt_address2.Text.Trim(),
+                                        province = "ON",
+                                        country = "Canada",
+                                        security_question = null,
+                                        security_answer = txt_answer.Text.Trim();
+
+                                    if(rb_male.Checked == true)
+                                    {
+                                        gender = "Male";
+                                    }
+                                    else
+                                    {
+                                        gender = "Female";
+                                    }
+
+                                    province = ddl_province.SelectedValue;
+                                    security_question = ddl_question.SelectedValue;
+
+                                    // open the connection
+                                    con.Open();
+
+                                    // check if the username is valid
+                                    sql = "SELECT user_name FROM [user]";
+                                    cmd = new SqlCommand(sql, con);
+                                    reader = cmd.ExecuteReader();
+                                    while(reader.Read())
+                                    {
+                                        if (reader.GetString(0) == user_name)
+                                        {
+                                            isRegistrationValid = false;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            isRegistrationValid = true;
+                                        }
+                                    }
+
+                                    // close the reader
+                                    reader.Close();
+
+                                    // if username is valid, do registration
+                                    if (isRegistrationValid)
+                                    {
+                                        lbl_username_star.Visible = false;
+                                        lbl_error_message.Text = null;
+                                        lbl_error_message.Visible = false;
+
+                                        sql = "INSERT INTO [user] VALUES(@userName, @Password, @first_name, @last_name, @gender, @address1, @address2, @province, @country, @security_question, @security_answer)";      // insert statement
+                                        cmd = new SqlCommand(sql, con);
+
+                                        // set parameters
+                                        cmd.Parameters.Add(new SqlParameter("userName", user_name));
+                                        cmd.Parameters.Add(new SqlParameter("Password", password));
+                                        cmd.Parameters.Add(new SqlParameter("first_name", first_name));
+                                        cmd.Parameters.Add(new SqlParameter("last_name", last_name));
+                                        cmd.Parameters.Add(new SqlParameter("gender", gender));
+                                        cmd.Parameters.Add(new SqlParameter("address1", address1));
+                                        cmd.Parameters.Add(new SqlParameter("address2", address2));
+                                        cmd.Parameters.Add(new SqlParameter("province", province));
+                                        cmd.Parameters.Add(new SqlParameter("country", country));
+                                        cmd.Parameters.Add(new SqlParameter("security_question", security_question));
+                                        cmd.Parameters.Add(new SqlParameter("security_answer", security_answer));
+
+                                        cmd.ExecuteNonQuery();
+                                        
+                                        lbl_error_message.Text = "Registration Successful. . .";
+                                        lbl_error_message.Visible = true;
+
+                                        // hide registration form and display success message
+                                        form.Visible = false;
+                                        success_message.Visible = true;
+
+                                        // set session variable to login
+                                        Session["username"] = txt_username.Text;
+
+                                        // redirect to home page after 3 seconds
+                                        Response.AddHeader("REFRESH", "3;URL=user_home.aspx");
+                                    }
+                                    else
+                                    {
+                                        success_message.Visible = false;
+                                        lbl_username_star.Visible = true;
+                                        lbl_error_message.Text = "User name already exists. . .";
+                                        lbl_error_message.Visible = true;
+                                    }
+
+                                    // close the connection
+                                    con.Close();
                                 }
                             }
                         }
@@ -140,7 +240,10 @@ namespace OEMS
             lbl_address1_star.Visible = false;
             lbl_answer_star.Visible = false;
             lbl_error_message.Visible = false;
-        }
-        
+
+            // panel setting
+            form.Visible = true;
+            success_message.Visible = false;
+        }        
     }
 }
