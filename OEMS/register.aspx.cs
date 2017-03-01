@@ -14,6 +14,7 @@ namespace OEMS
         // connectionString, Command, Reader, SQLQuery
 
         SqlConnection con;
+        string c_string;
         SqlCommand cmd;
         string sql = null;
         SqlDataReader reader;
@@ -24,13 +25,16 @@ namespace OEMS
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Control mainMenu;
             // disable the menu before login
             mainMenu = Page.Master.FindControl("Menu1");
             mainMenu.Visible = false;
 
             success_message.Visible = false;
 
-            con = new SqlConnection("Data Source=DESKTOP-6DAVLBI\\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True");
+            global_variable gb = new global_variable();
+            c_string = gb.getConnectionString();
+            con = new SqlConnection(c_string);
         }
 
         protected void btn_register_Click(object sender, EventArgs e)

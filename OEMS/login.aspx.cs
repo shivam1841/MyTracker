@@ -14,6 +14,7 @@ namespace OEMS
         // connectionString, Command, Reader, SQLQuery
 
         SqlConnection con;
+        string c_string;
         SqlCommand cmd;
         string sql = null;
         SqlDataReader reader;
@@ -34,8 +35,10 @@ namespace OEMS
 
                 Label lbl_welcome_user = this.Master.FindControl("lbl_welcome_user") as Label;
                 lbl_welcome_user.Text = "Please sign in to continue";
-                
-                con = new SqlConnection("Data Source=DESKTOP-6DAVLBI\\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True");
+
+                global_variable gb = new global_variable();
+                c_string = gb.getConnectionString();
+                con = new SqlConnection(c_string);
             }
         }
 

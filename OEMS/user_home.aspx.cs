@@ -12,20 +12,24 @@ namespace OEMS
     {
         // REQUIRED VARIABLE TO CONNECT TO DATABASE
         SqlConnection con;
+        string c_string;
         SqlCommand cmd;
         string sql;
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            //******************************COPY FOLLOWING CODE IN EVERY PAGE LOAD EVENT************//
             if (Session["username"] == null)
             {
                 Response.Redirect("~/login.aspx");
             }
             else
             {
-                //******************************COPY FOLLOWING CODE IN EVERY PAGE LOAD EVENT************//
                 // fetch user's first name
-                con = new SqlConnection("Data Source=DESKTOP-6DAVLBI\\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True");
+                global_variable gb = new global_variable();
+                c_string = gb.getConnectionString();
+                con = new SqlConnection(c_string);
+
                 con.Open();
                 sql = "SELECT first_name FROM [user] WHERE user_name = @username";
                 cmd = new SqlCommand(sql, con);

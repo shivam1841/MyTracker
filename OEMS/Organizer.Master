@@ -45,7 +45,7 @@
                 </div>
             </div>
             <br />
-            <asp:Panel ID="panel_content" runat="server" CssClass="inlineBlock" Width="815px" HorizontalAlign="Left" VerticalAlign="top">
+            <asp:Panel ID="panel_content" runat="server" CssClass="inlineBlock" Width="815px" HorizontalAlign="Left" VerticalAlign="top" BackColor="#ffff66">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </asp:Panel>

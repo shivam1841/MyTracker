@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Label ID="lbl_error_message" runat="server" Text="Error" ForeColor="Red" Visible="False"></asp:Label></td>
+                        <asp:Label ID="lbl_error_message" runat="server" Text="Error" ForeColor="Red" Visible="False" Font-Size="14pt"></asp:Label></td>
                 </tr>
                 <tr>
                     <td colspan="2">

@@ -25,11 +25,11 @@ namespace OEMS
         {
             if(Menu1.SelectedValue == "Home")
             {
-                
+                Response.Redirect("~/user_home.aspx");
             }
             if (Menu1.SelectedValue == "Create Event")
             {
-
+                Response.Redirect("~/CreateEvent.aspx");
             }
             if (Menu1.SelectedValue == "Event List")
             {

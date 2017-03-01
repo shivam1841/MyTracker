@@ -9,9 +9,13 @@ namespace OEMS
 {
     public partial class forgot_password : System.Web.UI.Page
     {
+        Control mainMenu;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // disable the menu before login
+            mainMenu = Page.Master.FindControl("Menu1");
+            mainMenu.Visible = false;
         }
     }
 }
