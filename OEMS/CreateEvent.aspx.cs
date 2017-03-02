@@ -143,6 +143,16 @@ namespace OEMS
                         lblResponseMessage.Visible = true;
                         con.Close();
 
+                        // update event unique ID to avoid crash
+                        con.Open();
+                        sql = "SELECT max(event_id) FROM [event]";
+                        cmd = new SqlCommand(sql, con);
+                        string e_id = cmd.ExecuteScalar().ToString();
+                        int event_id = Convert.ToInt32(e_id) + 1;
+                        con.Close();
+
+                        txt_eventID.Text = event_id.ToString();
+
                         // clear all textboxes
                         txt_EventName.Text = null;
                         txt_EventDescription.Text = null;
@@ -191,6 +201,16 @@ namespace OEMS
                     lblResponseMessage.ForeColor = System.Drawing.Color.Blue;
                     lblResponseMessage.Visible = true;
                     con.Close();
+
+                    // update event unique ID to avoid crash
+                    con.Open();
+                    sql = "SELECT max(event_id) FROM [event]";
+                    cmd = new SqlCommand(sql, con);
+                    string e_id = cmd.ExecuteScalar().ToString();
+                    int event_id = Convert.ToInt32(e_id) + 1;
+                    con.Close();
+
+                    txt_eventID.Text = event_id.ToString();
 
                     // clear all textboxes
                     txt_EventName.Text = null;
