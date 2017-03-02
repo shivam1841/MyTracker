@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace OEMS
 {
-    public partial class event_list : System.Web.UI.Page
+    public partial class participating_events : System.Web.UI.Page
     {
         // REQUIRED VARIABLE TO CONNECT TO DATABASE
         SqlConnection con;
@@ -45,26 +45,23 @@ namespace OEMS
                 //******************************COPY ABOVE CODE IN EVERY PAGE LOAD EVENT************//
             }
 
-            // webpage code
-            if(gv_eventlist.Rows.Count == 0)
+            if (gv_participating_event.Rows.Count == 0)
             {
-                Label2.Text = "No events to display";
-                dv_event_details.Visible = false;
-                Label3.Visible = false;
-                HyperLink1.Visible = false;
+                Label1.Text = "No Events to display";
+                Label2.Visible = false;
+                dv_participating_event.Visible = false;
             }
             else
             {
-                Label2.Text = "(Select event to view detailed information)";
-                dv_event_details.Visible = true;
-                Label3.Visible = true;
-                HyperLink1.Visible = true;
+                Label1.Text = "Events I am Added as Paticipant";
+                Label2.Visible = true;
+                dv_participating_event.Visible = true;
             }
         }
 
-        protected void gv_eventlist_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gv_participating_event_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -27,6 +27,10 @@ namespace OEMS
             {
                 Response.Redirect("~/user_home.aspx");
             }
+            if (Menu1.SelectedValue == "Events I am Participating")
+            {
+                Response.Redirect("~/participating_events.aspx");
+            }
             if (Menu1.SelectedValue == "Create Event")
             {
                 Response.Redirect("~/CreateEvent.aspx");

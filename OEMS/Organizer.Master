@@ -26,7 +26,9 @@
                 <DynamicMenuStyle BackColor="#FFFBD6" />
                 <DynamicSelectedStyle BackColor="#FFCC66" />
                 <Items>
-                    <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                    <asp:MenuItem Text="Home" Value="Home">
+                        <asp:MenuItem Text="Events I am Participating" Value="Events I am Participating"></asp:MenuItem>
+                    </asp:MenuItem>
                     <asp:MenuItem Text="Create Event" Value="Create Event"></asp:MenuItem>
                     <asp:MenuItem Text="Event List" Value="Event List"></asp:MenuItem>
                     <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>

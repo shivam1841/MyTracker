@@ -130,12 +130,13 @@ namespace OEMS
 
                         // create participant
                         con.Open();
-                        sql = "INSERT INTO [event_participants] VALUES (@event_id, @participant)";
+                        sql = "INSERT INTO [event_participants] VALUES (@event_id, @participant, @assigned_by)";
                         cmd = new SqlCommand(sql, con);
 
                         // set parameters
                         cmd.Parameters.Add(new SqlParameter("event_id", txt_eventID.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("assigned_by", Session["username"]));
 
                         cmd.ExecuteNonQuery();
                         lblResponseMessage.Text = "Event created successfully. . .";
