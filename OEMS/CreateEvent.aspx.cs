@@ -92,6 +92,7 @@ namespace OEMS
                         {
                             isParticipantValid = false;
                             lblResponseMessage.Text = "Please verify the user name of participant";
+                            lblResponseMessage.ForeColor = System.Drawing.Color.Red;
                             lblResponseMessage.Visible = true;
                         }
                     }
@@ -105,7 +106,7 @@ namespace OEMS
                     {
                         // create event
                         con.Open();
-                        sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username)";
+                        sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username, @participant)";
                         cmd = new SqlCommand(sql, con);
 
                         // set parameters
@@ -119,9 +120,11 @@ namespace OEMS
                         cmd.Parameters.Add(new SqlParameter("province", ddl_province.SelectedValue));
                         cmd.Parameters.Add(new SqlParameter("activity", txtActivity.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("username", user.ToLower().Trim()));
+                        cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.ToLower().Trim()));
 
                         cmd.ExecuteNonQuery();
                         lblResponseMessage.Text = "Event created successfully. . .";
+                        lblResponseMessage.ForeColor = System.Drawing.Color.Blue;
                         lblResponseMessage.Visible = true;
                         con.Close();
 
@@ -136,6 +139,7 @@ namespace OEMS
 
                         cmd.ExecuteNonQuery();
                         lblResponseMessage.Text = "Event created successfully. . .";
+                        lblResponseMessage.ForeColor = System.Drawing.Color.Blue;
                         lblResponseMessage.Visible = true;
                         con.Close();
 
@@ -158,6 +162,7 @@ namespace OEMS
                     else
                     {
                         lblResponseMessage.Text = "Please verify the user name of participant";
+                        lblResponseMessage.ForeColor = System.Drawing.Color.Red;
                         lblResponseMessage.Visible = true;
                     }
                 }
@@ -165,7 +170,7 @@ namespace OEMS
                 {
                     // if participant is not entered, create event without participant
                     con.Open();
-                    sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username)";
+                    sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username, @participant)";
                     cmd = new SqlCommand(sql, con);
 
                     // set parameters
@@ -179,9 +184,11 @@ namespace OEMS
                     cmd.Parameters.Add(new SqlParameter("province", ddl_province.SelectedValue));
                     cmd.Parameters.Add(new SqlParameter("activity", txtActivity.Text.Trim()));
                     cmd.Parameters.Add(new SqlParameter("username", Session["username"]));
+                    cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.ToLower().Trim()));
 
                     cmd.ExecuteNonQuery();
                     lblResponseMessage.Text = "Event created successfully. . .";
+                    lblResponseMessage.ForeColor = System.Drawing.Color.Blue;
                     lblResponseMessage.Visible = true;
                     con.Close();
 
@@ -203,6 +210,7 @@ namespace OEMS
             else
             {
                 lblResponseMessage.Text = "Something went wrong. . .";
+                lblResponseMessage.ForeColor = System.Drawing.Color.Red;
                 lblResponseMessage.Visible = true;
             }
         }

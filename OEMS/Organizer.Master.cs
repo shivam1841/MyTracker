@@ -33,7 +33,7 @@ namespace OEMS
             }
             if (Menu1.SelectedValue == "Event List")
             {
-
+                Response.Redirect("~/event_list.aspx");
             }
             if (Menu1.SelectedValue == "Edit Profile")
             {
