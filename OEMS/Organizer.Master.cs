@@ -45,7 +45,7 @@ namespace OEMS
             }
             if (Menu1.SelectedValue == "Manage Event")
             {
-
+                Response.Redirect("~/ManageEvent.aspx");
             }
             if (Menu1.SelectedValue == "Change Password")
             {

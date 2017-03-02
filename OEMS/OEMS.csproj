@@ -220,7 +220,7 @@
     <Content Include="image\tracker-logo.jpg" />
     <Content Include="image\underConstruction.png" />
     <Content Include="login.aspx" />
-    <Content Include="manage_event.aspx" />
+    <Content Include="ManageEvent.aspx" />
     <Content Include="Organizer.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="participating_events.aspx" />
@@ -438,12 +438,12 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manage_event.aspx.cs">
-      <DependentUpon>manage_event.aspx</DependentUpon>
+    <Compile Include="ManageEvent.aspx.cs">
+      <DependentUpon>ManageEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manage_event.aspx.designer.cs">
-      <DependentUpon>manage_event.aspx</DependentUpon>
+    <Compile Include="ManageEvent.aspx.designer.cs">
+      <DependentUpon>ManageEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Organizer.Master.cs">
