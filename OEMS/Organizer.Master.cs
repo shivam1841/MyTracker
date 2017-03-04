@@ -41,7 +41,7 @@ namespace OEMS
             }
             if (Menu1.SelectedValue == "Edit Profile")
             {
-
+                Response.Redirect("~/EditProfile.aspx");
             }
             if (Menu1.SelectedValue == "Manage Event")
             {

@@ -14,52 +14,62 @@
     </style>
 </head>
 <body align="center" bgcolor="#D3D3D3">
-    <form id="form1" runat="server">
-        <div align="center" style="width: 815px; margin: 0 auto">
-            <asp:Image ID="header_image" runat="server" Height="148px" Width="815px" alt="Image not found" ImageAlign="Top" ImageUrl="~/image/header_logo.png" />
+  <!--  <table id="mainLayout" align="center" border="0" style="border-left: double; border-left-width: thick; border-left-color: tan; border-right: double; border-right-width: thick; border-right-color: tan"> -->
+        <table align="center" style="border-width:thick; border-style:double; border-color:darkgoldenrod">
+        <tr>
+            <td>
 
-            <br />
-            <div style="margin:0 auto; width:821px; position: relative; left: 2px; visibility: visible; top: 0px;">
-            <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px" OnMenuItemClick="Menu1_MenuItemClick" Width="815px">
-                <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
-                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <DynamicMenuStyle BackColor="#FFFBD6" />
-                <DynamicSelectedStyle BackColor="#FFCC66" />
-                <Items>
-                    <asp:MenuItem Text="Home" Value="Home">
-                        <asp:MenuItem Text="Events I am Participating" Value="Events I am Participating"></asp:MenuItem>
-                    </asp:MenuItem>
-                    <asp:MenuItem Text="Create Event" Value="Create Event"></asp:MenuItem>
-                    <asp:MenuItem Text="Event List" Value="Event List"></asp:MenuItem>
-                    <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>
-                    <asp:MenuItem Text="Edit Profile" Value="Edit Profile"></asp:MenuItem>
-                    <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
-                    <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
-                </Items>
-                <StaticHoverStyle BackColor="#990000" ForeColor="White" />
-                <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="2px" />
-                <StaticSelectedStyle BackColor="#FFCC66" />
-            </asp:Menu>
-            </div>
-            <div align="right">
-                <div style="background-color:#E4BA1E" style="width: 250px">
-                    <asp:Label ID="lbl_welcome_user" runat="server" Text="Please sign in to continue" Font-Size="14pt"></asp:Label>
-                </div>
-            </div>
-            <br />
-            <asp:Panel ID="panel_content" runat="server" CssClass="inlineBlock" Width="815px" HorizontalAlign="Left" VerticalAlign="top" BackColor="#ffff66">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </asp:Panel>
-            <br />
-            <br />
-            <div class="footer">
-            <asp:Panel ID="footer" runat="server" BackColor="#FFCB08" BorderStyle="Dashed" BorderWidth="1px" Width="815px" Height="60px">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> <asp:Label ID="Label1" runat="server" Text="Copyright (c) 2017. All Rights Reserved." Font-Bold="False"></asp:Label>
+                <form id="form1" runat="server">
+                    <div align="center" style="width: 815px; margin: 0 auto">
+                        <asp:Image ID="header_image" runat="server" Height="148px" Width="815px" alt="Image not found" ImageAlign="Top" ImageUrl="~/image/header_logo.png" />
 
-            </asp:Panel>
-            </div>
-        </div>
-    </form>
+                        <br />
+                        <div style="margin: 0 auto; width: 821px; position: relative; left: 2px; visibility: visible; top: 0px;">
+                            <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px" OnMenuItemClick="Menu1_MenuItemClick" Width="815px">
+                                <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                <DynamicMenuStyle BackColor="#FFFBD6" />
+                                <DynamicSelectedStyle BackColor="#FFCC66" />
+                                <Items>
+                                    <asp:MenuItem Text="Home" Value="Home">
+                                        <asp:MenuItem Text="Events I am Participating" Value="Events I am Participating"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Create Event" Value="Create Event"></asp:MenuItem>
+                                    <asp:MenuItem Text="Event List" Value="Event List"></asp:MenuItem>
+                                    <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>
+                                    <asp:MenuItem Text="Edit Profile" Value="Edit Profile"></asp:MenuItem>
+                                    <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
+                                    <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
+                                </Items>
+                                <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                                <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="2px" />
+                                <StaticSelectedStyle BackColor="#FFCC66" />
+                            </asp:Menu>
+                        </div>
+                        <div align="right">
+                            <div style="background-color: #E4BA1E" style="width: 250px">
+                                <asp:Label ID="lbl_welcome_user" runat="server" Text="Please sign in to continue" Font-Size="14pt"></asp:Label>
+                            </div>
+                        </div>
+                        <br />
+                        <asp:Panel ID="panel_content" runat="server" CssClass="inlineBlock" Width="815px" HorizontalAlign="Left" VerticalAlign="top" BackColor="#ffff66">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </asp:Panel>
+                        <br />
+                        <br />
+                        <div class="footer">
+                            <asp:Panel ID="footer" runat="server" BackColor="#FFCB08" BorderStyle="Dashed" BorderWidth="1px" Width="815px" Height="60px">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                                <asp:Label ID="Label1" runat="server" Text="Copyright (c) 2017. All Rights Reserved." Font-Bold="False"></asp:Label>
+
+                            </asp:Panel>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+
+    </table>
 </body>
 </html>
