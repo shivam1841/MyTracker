@@ -48,49 +48,10 @@ namespace OEMS
             }
 
             // webpage code
-            
-            form.Visible = true;
+            panel_fetchData.Visible=true;
+            form.Visible = false;
             success_message.Visible = false;
             panel_deleteProfile.Visible = false;
-
-            /******************
-             * POPULATE PROFILE EDIT FORM WITH THE EXISITNG VALUES *
-            *******************/
-
-            con.Open();
-            sql = "SELECT first_name, last_name, gender, address1, address2, state, country, security_question, security_answer FROM [user] WHERE user_name = @user_name";
-            cmd = new SqlCommand(sql, con);
-            cmd.Parameters.Add(new SqlParameter("user_name", Session["username"]));
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                txt_firstname.Text = reader.GetString(0);
-                txt_lastname.Text = reader.GetString(1);
-                gender = reader.GetString(2);
-                if (gender == "Male")
-                {
-                    rb_male.Checked = true;
-                }
-                else
-                {
-                    rb_female.Checked = true;
-                }
-                txt_address1.Text = reader.GetString(3);
-                txt_address2.Text = reader.GetString(4);
-                ddl_province.Text = reader.GetString(5);
-                ddl_country.Text = reader.GetString(6);
-                ddl_question.Text = reader.GetString(7);
-                txt_answer.Text = reader.GetString(8);
-            }
-            reader.Close();
-            con.Close();
-
-            // SET USER CONTROLS
-            success_message.Visible = false;
-            panel_deleteProfile.Visible = false;
-            form.Enabled = true;
-            form.Visible = true;
         }
 
         protected void btn_update_Click(object sender, EventArgs e)
@@ -98,9 +59,13 @@ namespace OEMS
             // CHECK IF ANY REQUIRED FIELDS ARE MISSING
             if (txt_firstname.Text.Trim() == "")       // check if first name is empty
             {
+                // SET ERROR
                 lbl_firstname_star.Visible = true;
                 lbl_error_message.Text = "Please enter first name...";
                 lbl_error_message.Visible = true;
+
+                // SET USER CONTROL
+                panel_fetchData.Visible = false;
                 form.Visible = true;
             }
             else        // if firstname is entered
@@ -109,9 +74,13 @@ namespace OEMS
 
                 if (txt_address1.Text.Trim() == "")       // check if address1 is empty
                 {
+                    // SET ERROR
                     lbl_address1_star.Visible = true;
                     lbl_error_message.Text = "Please enter Address 1...";
                     lbl_error_message.Visible = true;
+
+                    // SET USER CONTROL
+                    panel_fetchData.Visible = false;
                     form.Visible = true;
                 }
                 else        // if address1 is entered
@@ -120,9 +89,13 @@ namespace OEMS
 
                     if (txt_answer.Text.Trim() == "")       // check if security answer is entered
                     {
+                        // SET ERROR
                         lbl_answer_star.Visible = true;
                         lbl_error_message.Text = "Please enter Security Answer...";
                         lbl_error_message.Visible = true;
+
+                        // SET USER CONTROL
+                        panel_fetchData.Visible = false;
                         form.Visible = true;
                     }
                     else        // if all necessary fields are entered, proceed to registration
@@ -169,6 +142,7 @@ namespace OEMS
                         lbl_error_message.Visible = true;
 
                         //SET USER CONTROLS
+                        panel_fetchData.Visible = false;
                         form.Enabled = true;
                         form.Visible = true;
                         panel_deleteProfile.Visible = false;
@@ -180,8 +154,9 @@ namespace OEMS
 
         protected void btn_delete_Click(object sender, EventArgs e)
         {
-            panel_deleteProfile.Visible = true;
+            panel_fetchData.Visible = false;
             form.Visible = false;
+            panel_deleteProfile.Visible = true;
         }
 
         protected void btn_verify_password_for_delete_profile_Click(object sender, EventArgs e)
@@ -196,35 +171,132 @@ namespace OEMS
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.Add(new SqlParameter("username", Session["username"]));
                 string password_DB = cmd.ExecuteScalar().ToString();
+                con.Close();
 
                 if (password_DB == txt_password_for_delete_profile.Text.Trim())
                 {
                     lbl_response_delete_profile.Text = "";
                     lbl_response_delete_profile.Visible = false;
 
+                    /*****************************
+                     * DELETE ALL RECORD ASSOCIATED WITH USERNAME
+                     * AFFECTING TABLES: EVENT_PARTICIPANTS, EVENT, USER
+                     * MAINTAIN THE ORDER BECAUSE OF RELATIONSHIP
+                     * **************************/
+
+                    // event_participants delete user owned event
+                    con.Open();
+                    sql = "DELETE FROM [event_participants] WHERE assigned_by = @user";
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.Add(new SqlParameter("user", Session["username"]));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    // event_participants delete user participated event
+                    con.Open();
+                    sql = "DELETE FROM [event_participants] WHERE user_name = @user";
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.Add(new SqlParameter("user", Session["username"]));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+
+                    // EVENT
+                    con.Open();
+                    sql = "DELETE FROM [event] WHERE user_name = @user";
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.Add(new SqlParameter("user", Session["username"]));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    // USER
+                    con.Open();
+                    sql = "DELETE FROM [user] WHERE user_name = @user";
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.Add(new SqlParameter("user", Session["username"]));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    // SET THE USER CONTROLS
+                    panel_fetchData.Visible = false;
+                    form.Visible = false;
                     panel_deleteProfile.Visible = false;
                     success_message.Visible = true;
 
                     Session["username"] = null;
 
-                    // redirect to home page after 3 seconds
+                    // redirect to LOGIN page after 3 seconds
                     Response.AddHeader("REFRESH", "3;URL=login.aspx");
 
                 }
                 else
                 {
-                    panel_deleteProfile.Visible = true;
+                    // SET ERROR
                     lbl_response_delete_profile.Text = "Incorrect password. . .";
                     lbl_response_delete_profile.Visible = true;
+
+                    // SET USER CONTROL
+                    panel_fetchData.Visible = false;
+                    form.Visible = false;
+                    panel_deleteProfile.Visible = true;
+                    success_message.Visible = false;
                 }
-                con.Close();
             }
             else
             {
+                // SET USER CONTROL
+                panel_fetchData.Visible = false;
+                form.Visible = false;
+                success_message.Visible = false;
                 panel_deleteProfile.Visible = true;
+
+                // SET ERROR
                 lbl_response_delete_profile.Text = "Please enter password. . .";
                 lbl_response_delete_profile.Visible = true;
             }
+        }
+
+        protected void btn_fetchProfile_Click(object sender, EventArgs e)
+        {
+            /******************
+             * POPULATE PROFILE EDIT FORM WITH THE EXISITNG VALUES *
+            *******************/
+
+            con.Open();
+            sql = "SELECT first_name, last_name, gender, address1, address2, state, country, security_question, security_answer FROM [user] WHERE user_name = @user_name";
+            cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add(new SqlParameter("user_name", Session["username"]));
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                txt_firstname.Text = reader.GetString(0);
+                txt_lastname.Text = reader.GetString(1);
+                gender = reader.GetString(2);
+                if (gender == "Male")
+                {
+                    rb_male.Checked = true;
+                }
+                else
+                {
+                    rb_female.Checked = true;
+                }
+                txt_address1.Text = reader.GetString(3);
+                txt_address2.Text = reader.GetString(4);
+                ddl_province.Text = reader.GetString(5);
+                ddl_country.Text = reader.GetString(6);
+                ddl_question.Text = reader.GetString(7);
+                txt_answer.Text = reader.GetString(8);
+            }
+            reader.Close();
+            con.Close();
+
+            // SET USER CONTROLS
+            panel_fetchData.Visible = false;
+            form.Enabled = true;
+            form.Visible = true;
+            panel_deleteProfile.Visible = false;
+            success_message.Visible = false;
         }
     }
 }

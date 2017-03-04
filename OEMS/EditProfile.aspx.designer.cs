@@ -13,6 +13,24 @@ namespace OEMS {
     public partial class EditProfile {
         
         /// <summary>
+        /// panel_fetchData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panel_fetchData;
+        
+        /// <summary>
+        /// btn_fetchProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_fetchProfile;
+        
+        /// <summary>
         /// form control.
         /// </summary>
         /// <remarks>

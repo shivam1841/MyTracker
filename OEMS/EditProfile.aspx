@@ -9,6 +9,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
+        <asp:Panel runat="server" ID="panel_fetchData">
+            <table style="width: 50%;" align="center" border="0" bgcolor="#E4BA1E">
+                <tr>
+                    <td align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <asp:Button ID="btn_fetchProfile" runat="server" Text="Load my profile" OnClick="btn_fetchProfile_Click" Font-Bold="True" Font-Size="Large" />
+                    </td>
+                </tr>
+        </asp:Panel>
+
         <asp:Panel runat="server" ID="form">
 
             <table style="width: 50%;" align="center" border="0" bgcolor="#E4BA1E">
@@ -179,8 +191,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
-                        Enter Password: 
+                    <td align="right">Enter Password: 
                     </td>
                     <td>
                         <asp:TextBox ID="txt_password_for_delete_profile" runat="server" TextMode="Password"></asp:TextBox>
