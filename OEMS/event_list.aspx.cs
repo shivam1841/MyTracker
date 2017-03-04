@@ -59,12 +59,18 @@ namespace OEMS
                 dv_event_details.Visible = true;
                 Label3.Visible = true;
                 HyperLink1.Visible = true;
+
+                // ASSIGN SELECTED VALUE FROM GRIDVIEW
+                string event_id = gv_eventlist.SelectedValue.ToString();
+                HyperLink1.NavigateUrl = "ManageEvent.aspx?event_id=" + event_id;         // add parameter to the redirecting link
             }
         }
 
         protected void gv_eventlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // ASSIGN SELECTED VALUE FROM GRIDVIEW
+            string event_id = gv_eventlist.SelectedValue.ToString();
+            HyperLink1.NavigateUrl = "ManageEvent.aspx?event_id=" + event_id;         // add parameter to the redirecting link
         }
     }
 }

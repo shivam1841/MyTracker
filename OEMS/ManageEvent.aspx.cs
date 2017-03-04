@@ -48,6 +48,21 @@ namespace OEMS
             }
 
             // webpage code
+            try
+            {
+                if (String.IsNullOrEmpty(Request.QueryString["event_id"].ToString()))
+                {
+                    txt_event_id.Text = "";
+                }
+                else
+                {
+                    txt_event_id.Text = Request.QueryString["event_id"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                txt_event_id.Text = "";
+            }
             panel_data.Visible = false;
         }
 
@@ -549,7 +564,7 @@ namespace OEMS
                     }
                 }
             }
-            
+
             panel_data.Visible = true;
         }
 
@@ -578,6 +593,34 @@ namespace OEMS
             ddl_province.SelectedIndex = 0;
             txtActivity.Text = null;
             txt_participant.Text = null;
+        }
+
+        protected void btn_delete_Click(object sender, EventArgs e)
+        {
+            // event_participants delete user participated event
+            con.Open();
+            sql = "DELETE FROM [event_participants] WHERE event_id = @event_id";
+            cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add(new SqlParameter("event_id", txt_event_id.Text.Trim()));
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+
+            // EVENT
+            con.Open();
+            sql = "DELETE FROM [event] WHERE event_id = @event_id";
+            cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add(new SqlParameter("event_id", txt_event_id.Text.Trim()));
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            // SET USER CONTROL
+            lblResponseMessage.Text = "Event Deleted. . .";
+            lblResponseMessage.Visible = true;
+            panel_data.Enabled = false;
+            txt_event_id.ReadOnly = false;
+            btn_search.Visible = true;
+            lblTitle.Text = "Search Event";
         }
     }
 }

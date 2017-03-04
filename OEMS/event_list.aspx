@@ -47,7 +47,7 @@
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
             <PagerStyle ForeColor="DarkSlateBlue" HorizontalAlign="Center" BackColor="PaleGoldenrod" />
         </asp:DetailsView>
-        <asp:Label ID="Label3" runat="server" Text="To update details, copy the ID and "></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="To update details "></asp:Label>
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ManageEvent.aspx">click here</asp:HyperLink>
 
         <asp:SqlDataSource ID="ds_eventDetail" runat="server" ConnectionString="<%$ ConnectionStrings:myTracker_DBConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant] FROM [event] WHERE ([event_id] = @event_id)">

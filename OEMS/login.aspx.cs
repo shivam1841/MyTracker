@@ -83,7 +83,7 @@ namespace OEMS
                                     lbl_error.Text = "Login successful";
                                     lbl_error.Visible = true;
                                     mainMenu.Visible = true;
-                                    Session["username"] = txt_username.Text;
+                                    Session["username"] = txt_username.Text.ToLower().Trim();
                                 
                                     Response.Redirect("~/user_home.aspx");
                                     break;

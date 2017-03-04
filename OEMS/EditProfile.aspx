@@ -213,7 +213,7 @@
         <asp:Panel runat="server" ID="success_message" Font-Names="Forte" Font-Size="16pt" BorderStyle="Inset" BorderWidth="5px" HorizontalAlign="Center">
             <asp:Label ID="Label20" runat="server" Text="Deleting Profile. . ."></asp:Label>
             <br />
-            <asp:Label ID="Label21" runat="server" Text="Will be redirected to home page. . ."></asp:Label>
+            <asp:Label ID="Label21" runat="server" Text="Will be redirected to Login page. . ."></asp:Label>
         </asp:Panel>
     </div>
 </asp:Content>

@@ -195,7 +195,7 @@ namespace OEMS
                                         success_message.Visible = true;
 
                                         // set session variable to login
-                                        Session["username"] = txt_username.Text;
+                                        Session["username"] = txt_username.Text.ToLower().Trim();
 
                                         // redirect to home page after 3 seconds
                                         Response.AddHeader("REFRESH", "3;URL=user_home.aspx");

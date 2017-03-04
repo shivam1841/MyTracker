@@ -252,7 +252,8 @@
                                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel"
                                         Height="34px" Width="83px" OnClick="btn_cancel_Click" />
                                 </td>
-                                <td align="center">&nbsp;</td>
+                                <td align="center">&nbsp;<asp:Button ID="btn_delete" runat="server" Text="Delete Event" BackColor="Red" Font-Bold="True" Font-Size="12pt" ForeColor="#000066" Height="35px" OnClick="btn_delete_Click" Width="130px" />
+                                </td>
                             </tr>
                         </table>
                     </asp:Panel>
