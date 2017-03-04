@@ -20,7 +20,7 @@
                 </td>
             </tr>
             <tr><td><hr style="border: thick double #000000" /></td></tr>
-            <tr>
+            <tr style="background-color:darkseagreen">
                 <td colspan="2" class="auto-style3" align="center">
                     <asp:Label ID="lbl_upcoming" runat="server" ForeColor="Black" Text="Upcoming Events" Font-Bold="True" Font-Names="Forte" Font-Size="18pt"></asp:Label>
                 </td>
@@ -41,7 +41,7 @@
                 </td>
             </tr>
             <tr><td><hr style="border: thick double #000000" /></td></tr>
-            <tr>
+            <tr style="background-color:forestgreen">
                 <td colspan="2" class="auto-style2" align="center">
                     <asp:Label ID="lbl_ongoing" runat="server" ForeColor="Black" Text="Ongoing Events" Font-Bold="True" Font-Names="Forte" Font-Size="18pt"></asp:Label>
                 </td>
@@ -62,7 +62,7 @@
                 </td>
             </tr>
             <tr><td><hr style="border: thick double #000000" /></td></tr>
-            <tr>
+            <tr style="background-color:red">
                 <td colspan="2" class="auto-style2" align="center">
                     <asp:Label ID="lbl_past" runat="server" ForeColor="Black" Text="Past Events" Font-Bold="True" Font-Names="Forte" Font-Size="18pt"></asp:Label>
                 </td>

@@ -23,20 +23,19 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label1" runat="server" Text="Enter Event ID:"></asp:Label><asp:TextBox ID="txt_event_id" runat="server"></asp:TextBox>
-                </td>
-                <td>
+                    <asp:Label ID="Label1" runat="server" Text="Enter Event ID: "></asp:Label>
+                    <asp:TextBox ID="txt_event_id" runat="server"></asp:TextBox>
                     <asp:Button ID="btn_search" runat="server" Text="Search" OnClick="btn_search_Click" />
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <hr />
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Panel ID="panel_data" runat="server" Enabled="False">
+                    <asp:Panel ID="panel_data" runat="server">
                         <table runat="server" id="tblAddEdit" border="0" bgcolor="#fff99">
                             <tr>
                                 <td>
