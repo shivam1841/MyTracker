@@ -49,7 +49,7 @@ namespace OEMS
             }
             if (Menu1.SelectedValue == "Change Password")
             {
-
+                Response.Redirect("~/ChangePassword.aspx");
             }
             if (Menu1.SelectedValue == "Logout")
             {

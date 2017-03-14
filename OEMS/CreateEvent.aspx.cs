@@ -61,10 +61,10 @@ namespace OEMS
         {
             if (! (String.IsNullOrEmpty(txt_EventName.Text.Trim()) || String.IsNullOrEmpty(txt_EventDescription.Text.Trim()) || String.IsNullOrEmpty(txt_EventLocation.Text.Trim()) || String.IsNullOrEmpty(txt_City.Text.Trim())))
             {
-                string event_start = ddl_Month_start.SelectedValue + "/" + ddl_Date_start.SelectedValue + "/" + ddl_Year_start.SelectedValue + " 00:00:00.00";
+                string event_start = ddl_Month_start.SelectedValue + "/" + ddl_Date_start.SelectedValue + "/" + ddl_Year_start.SelectedValue + " 23:59:59.00";
                 DateTime e_start = Convert.ToDateTime(event_start);
 
-                string event_end = ddl_Month_end.SelectedValue + "/" + ddl_Date_end.SelectedValue + "/" + ddl_Year_end.SelectedValue + " 00:00:00.00";
+                string event_end = ddl_Month_end.SelectedValue + "/" + ddl_Date_end.SelectedValue + "/" + ddl_Year_end.SelectedValue + " 23:59:59.00";
                 DateTime e_end = Convert.ToDateTime(event_end);
 
                 string user = Session["username"].ToString();

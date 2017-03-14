@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="ManageEvent.aspx.cs" Inherits="OEMS.ManageEvent" %>
+﻿<%@ Page Title="Manage Event" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="ManageEvent.aspx.cs" Inherits="OEMS.ManageEvent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

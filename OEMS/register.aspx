@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="OEMS.register" %>
+﻿<%@ Page Title="Register to MyTracker" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="OEMS.register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">

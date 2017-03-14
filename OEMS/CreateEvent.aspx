@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="CreateEvent.aspx.cs" Inherits="OEMS.CreateEvent" %>
+﻿<%@ Page Title="Create New Event" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="CreateEvent.aspx.cs" Inherits="OEMS.CreateEvent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {

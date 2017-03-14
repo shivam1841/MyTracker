@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="participating_events.aspx.cs" Inherits="OEMS.participating_events" %>
+﻿<%@ Page Title="Participating Events" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="participating_events.aspx.cs" Inherits="OEMS.participating_events" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div align="center">
+        &nbsp;&nbsp;&nbsp;
         <table style="width: 740px" border="0" align="center">
             <tr>
                 <td colspan="2" class="auto-style3" align="center">

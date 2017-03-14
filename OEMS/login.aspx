@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="OEMS.login" %>
+﻿<%@ Page Title="Login to MyTracker" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="OEMS.login" %>
 <%@ MasterType VirtualPath="~/Organizer.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

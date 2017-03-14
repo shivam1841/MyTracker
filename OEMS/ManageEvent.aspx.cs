@@ -52,7 +52,7 @@ namespace OEMS
             {
                 if (String.IsNullOrEmpty(Request.QueryString["event_id"].ToString()))
                 {
-                    txt_event_id.Text = "";
+                    txt_event_id.Text = txt_event_id.Text.Trim();
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace OEMS
             }
             catch (Exception)
             {
-                txt_event_id.Text = "";
+                txt_event_id.Text = txt_event_id.Text.Trim();
             }
             panel_data.Visible = false;
         }
