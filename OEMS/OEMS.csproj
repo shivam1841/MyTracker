@@ -214,7 +214,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="forgot_password.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="image\event-management.jpg" />
     <Content Include="image\event.png" />
     <Content Include="image\header_logo.png" />
@@ -436,12 +436,12 @@
     <Compile Include="event_list.aspx.designer.cs">
       <DependentUpon>event_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forgot_password.aspx.cs">
-      <DependentUpon>forgot_password.aspx</DependentUpon>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forgot_password.aspx.designer.cs">
-      <DependentUpon>forgot_password.aspx</DependentUpon>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

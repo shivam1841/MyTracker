@@ -38,7 +38,7 @@
                     <asp:HyperLink ID="link_register" runat="server" NavigateUrl="~/register.aspx" Font-Size="12">Register</asp:HyperLink>
                 </asp:TableCell>
                 <asp:TableCell runat="server" HorizontalAlign="Center">
-                    <asp:HyperLink ID="link_forgotPassword" runat="server" NavigateUrl="~/forgot_password.aspx" Font-Size="12">Forgot Password</asp:HyperLink>
+                    <asp:HyperLink ID="link_forgotPassword" runat="server" NavigateUrl="~/ForgotPassword.aspx" Font-Size="12">Forgot Password</asp:HyperLink>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server">
