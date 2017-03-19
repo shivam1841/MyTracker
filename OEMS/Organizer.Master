@@ -11,13 +11,16 @@
         .inlineBlock {
             display: inline-block;
         }
+        .auto-style1 {
+            height: 331px;
+        }
     </style>
 </head>
 <body align="center" bgcolor="#D3D3D3">
   <!--  <table id="mainLayout" align="center" border="0" style="border-left: double; border-left-width: thick; border-left-color: tan; border-right: double; border-right-width: thick; border-right-color: tan"> -->
         <table align="center" style="border-width:thick; border-style:double; border-color:darkgoldenrod">
         <tr>
-            <td>
+            <td class="auto-style1">
 
                 <form id="form1" runat="server">
                     <div align="center" style="width: 815px; margin: 0 auto">

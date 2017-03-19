@@ -49,6 +49,8 @@
         </asp:DetailsView>
         <asp:Label ID="Label3" runat="server" Text="To update details "></asp:Label>
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ManageEvent.aspx">click here</asp:HyperLink>
+        <br />
+        <asp:Button ID="btn_printPage" runat="server" Text="Print Details" OnClientClick="javascript:window.print();" Height="35px" />
 
         <asp:SqlDataSource ID="ds_eventDetail" runat="server" ConnectionString="<%$ ConnectionStrings:myTracker_DBConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant] FROM [event] WHERE ([event_id] = @event_id)">
             <SelectParameters>

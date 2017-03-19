@@ -1,30 +1,42 @@
 ﻿<%@ Page Title="Participating Events" Language="C#" MasterPageFile="~/Organizer.Master" AutoEventWireup="true" CodeBehind="participating_events.aspx.cs" Inherits="OEMS.participating_events" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style2 {
+            width: 192px;
+        }
+
+        .auto-style3 {
+            width: 202px;
+        }
+
+        .auto-style4 {
+            width: 390px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div align="center">
         &nbsp;&nbsp;&nbsp;
         <table style="width: 740px" border="0" align="center">
             <tr>
-                <td colspan="2" class="auto-style3" align="center">
+                <td colspan="3" class="auto-style3" align="center">
                     <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="Events I am Added as Paticipant" Font-Bold="True" Font-Size="20pt" Font-Names="Forte"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <hr style="border: thick double #000000" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style2" colspan="2">
                     <asp:GridView ID="gv_participating_event" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="730px" AllowPaging="True" PageSize="5" AutoGenerateColumns="False" DataKeyNames="event_id" DataSourceID="ds_participating_events" OnSelectedIndexChanged="gv_participating_event_SelectedIndexChanged" SelectedIndex="0">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="event_id" HeaderText="ID" ReadOnly="True" SortExpression="event_id" />
                             <asp:BoundField DataField="event_name" HeaderText="Name" SortExpression="event_name" />
-                            <asp:BoundField DataField="event_description" HeaderText="Description" SortExpression="event_description" >
-                            </asp:BoundField>
+                            <asp:BoundField DataField="event_description" HeaderText="Description" SortExpression="event_description"></asp:BoundField>
                             <asp:BoundField DataField="event_location" HeaderText="Location" SortExpression="event_location" />
                             <asp:BoundField DataField="event_activity" HeaderText="Activity" SortExpression="event_activity" />
                             <asp:BoundField DataField="assigned_by" HeaderText="Assigned By" SortExpression="assigned_by" />
@@ -49,12 +61,12 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <hr />
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <asp:DetailsView ID="dv_participating_event" runat="server" Height="50px" Width="350px" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="event_id" DataSourceID="SqlDataSource1" GridLines="Horizontal" HeaderText="Event Details">
                         <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                         <Fields>
@@ -78,6 +90,13 @@
                             <asp:ControlParameter ControlID="gv_participating_event" Name="event_id" PropertyName="SelectedValue" Type="Decimal" />
                         </SelectParameters>
                     </asp:SqlDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="auto-style4">Not interested? 
+                </td>
+                <td align="left">
+                    <asp:Button ID="btn_removeEvent" runat="server" Text="Remove me from this event" OnClick="btn_removeEvent_Click" />
                 </td>
             </tr>
         </table>
