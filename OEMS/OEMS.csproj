@@ -198,6 +198,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AdminPanel\AdminEventsReport.aspx" />
+    <Content Include="AdminPanel\AdminLogin.aspx" />
+    <Content Include="AdminPanel\AdminManageEvents.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -224,6 +227,7 @@
     <Content Include="login.aspx" />
     <Content Include="ManageEvent.aspx" />
     <Content Include="Organizer.Master" />
+    <Content Include="AdminPanel\Admin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="participating_events.aspx" />
     <Content Include="register.aspx" />
@@ -382,6 +386,34 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminEventsReport.aspx.cs">
+      <DependentUpon>AdminEventsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminEventsReport.aspx.designer.cs">
+      <DependentUpon>AdminEventsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminManageEvents.aspx.cs">
+      <DependentUpon>AdminManageEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminManageEvents.aspx.designer.cs">
+      <DependentUpon>AdminManageEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

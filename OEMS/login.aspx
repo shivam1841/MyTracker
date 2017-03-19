@@ -46,6 +46,11 @@
                     <asp:Label ID="lbl_error" runat="server" Font-Names="Times New Roman" Font-Italic="False" Font-Size="12pt" ForeColor="Red" Text="" Font-Bold="True"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server" ColumnSpan="2">
+                    <asp:HyperLink ID="link_adminLogin" runat="server" NavigateUrl="~/AdminPanel/AdminLogin.aspx" Font-Size="12">Admin Login</asp:HyperLink>
+                </asp:TableCell>
+            </asp:TableRow>
         </asp:Table>
     </p>
 </asp:Content>
