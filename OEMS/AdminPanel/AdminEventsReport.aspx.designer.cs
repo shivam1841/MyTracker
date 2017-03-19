@@ -31,6 +31,15 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.GridView gv_eventlist;
         
         /// <summary>
+        /// EventReport_Admin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource EventReport_Admin;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace OEMS.AdminPanel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DetailsView dv_event_details;
+        
+        /// <summary>
+        /// EventDetails_Admin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource EventDetails_Admin;
         
         /// <summary>
         /// Label3 control.

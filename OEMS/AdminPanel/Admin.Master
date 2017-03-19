@@ -20,15 +20,15 @@
 
                         <br />
                         <div style="margin: 0 auto; width: 821px; position: relative; left: 2px; visibility: visible; top: 0px;">
-                            <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px" Width="815px">
+                            <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px" Width="815px" OnMenuItemClick="Menu1_MenuItemClick">
                                 <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
                                 <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                                 <DynamicMenuStyle BackColor="#FFFBD6" />
                                 <DynamicSelectedStyle BackColor="#FFCC66" />
                                 <Items>
-                                    <asp:MenuItem Text="User Report" Value="User Report"></asp:MenuItem>
+                                    <asp:MenuItem Text="Monitor User" Value="Monitor User"></asp:MenuItem>
                                     <asp:MenuItem Text="Manage User" Value="Manage User"></asp:MenuItem>
-                                    <asp:MenuItem Text="Event Report" Value="Event Report"></asp:MenuItem>
+                                    <asp:MenuItem Text="Monitor Event" Value="Monitor Event"></asp:MenuItem>
                                     <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>
                                     <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
                                     <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
@@ -50,7 +50,7 @@
                         </asp:Panel>
                         <br />
                         <br />
-                        <div class="footer">
+                        <div align="center" class="footer">
                             <asp:Panel ID="footer" runat="server" BackColor="#FFCB08" BorderStyle="Dashed" BorderWidth="1px" Width="815px" Height="60px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                                 <asp:Label ID="Label1" runat="server" Text="Copyright (c) 2017. All Rights Reserved." Font-Bold="False"></asp:Label>

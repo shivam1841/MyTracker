@@ -24,7 +24,7 @@ namespace OEMS.AdminPanel
         {
             if (Session["admin"] != null)        // if login exists
             {
-                //Response.Redirect("");
+                Response.Redirect("~/AdminPanel/AdminEventsReport.aspx");
             }
             else        // if not active login exists
             {
@@ -83,7 +83,7 @@ namespace OEMS.AdminPanel
                                 mainMenu.Visible = true;
                                 Session["admin"] = txt_username.Text.ToLower().Trim();
 
-                                //Response.Redirect("~/user_home.aspx");
+                                Response.Redirect("~/AdminPanel/AdminEventsReport.aspx");
                                 break;
                             }
                             else
