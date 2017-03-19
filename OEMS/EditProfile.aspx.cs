@@ -123,7 +123,7 @@ namespace OEMS
                         // UPDATE RECORD
 
                         con.Open();
-                        sql = "UPDATE [user] SET first_name = @first_name, last_name = @last_name, gender = @gender, address1 = @address1, address2 = @address2, state = @province, country = @country, security_question = @security_question, security_answer = @security_answer WHERE user_name = @username";
+                        sql = "UPDATE [user] SET first_name = @first_name, last_name = @last_name, gender = @gender, address1 = @address1, address2 = @address2, state = @province, country = @country, security_question = @security_question, security_answer = @security_answer, email = @email WHERE user_name = @username";
                         cmd = new SqlCommand(sql, con);
                         cmd.Parameters.Add(new SqlParameter("first_name", txt_firstname.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("last_name", txt_lastname.Text.Trim()));
@@ -133,12 +133,14 @@ namespace OEMS
                         cmd.Parameters.Add(new SqlParameter("province", ddl_province.SelectedValue));
                         cmd.Parameters.Add(new SqlParameter("country", ddl_country.SelectedValue));
                         cmd.Parameters.Add(new SqlParameter("security_question", ddl_question.SelectedValue));
-                        cmd.Parameters.Add(new SqlParameter("security_answer", txt_answer.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("security_answer", txt_answer.Text.Trim().ToLower()));
+                        cmd.Parameters.Add(new SqlParameter("email", txt_email.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("username", Session["username"]));
                         cmd.ExecuteNonQuery();
                         con.Close();
 
                         lbl_error_message.Text = "Profile Updated. . .";
+                        lbl_error_message.ForeColor = System.Drawing.Color.Blue;
                         lbl_error_message.Visible = true;
 
                         //SET USER CONTROLS
@@ -263,7 +265,7 @@ namespace OEMS
             *******************/
 
             con.Open();
-            sql = "SELECT first_name, last_name, gender, address1, address2, state, country, security_question, security_answer FROM [user] WHERE user_name = @user_name";
+            sql = "SELECT first_name, last_name, gender, address1, address2, state, country, security_question, security_answer, email FROM [user] WHERE user_name = @user_name";
             cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add(new SqlParameter("user_name", Session["username"]));
             reader = cmd.ExecuteReader();
@@ -286,7 +288,8 @@ namespace OEMS
                 ddl_province.Text = reader.GetString(5);
                 ddl_country.Text = reader.GetString(6);
                 ddl_question.Text = reader.GetString(7);
-                txt_answer.Text = reader.GetString(8);
+                txt_answer.Text = reader.GetString(8).ToLower();
+                txt_email.Text = reader.GetString(9);
             }
             reader.Close();
             con.Close();

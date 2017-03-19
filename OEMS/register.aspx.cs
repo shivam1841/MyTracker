@@ -125,7 +125,7 @@ namespace OEMS
                                         province = "ON",
                                         country = "Canada",
                                         security_question = null,
-                                        security_answer = txt_answer.Text.Trim();
+                                        security_answer = txt_answer.Text.Trim().ToLower();
 
                                     if(rb_male.Checked == true)
                                     {
@@ -169,7 +169,7 @@ namespace OEMS
                                         lbl_error_message.Text = null;
                                         lbl_error_message.Visible = false;
 
-                                        sql = "INSERT INTO [user] VALUES(@userName, @Password, @first_name, @last_name, @gender, @address1, @address2, @province, @country, @security_question, @security_answer)";      // insert statement
+                                        sql = "INSERT INTO [user] VALUES(@userName, @Password, @first_name, @last_name, @gender, @address1, @address2, @province, @country, @security_question, @security_answer, @email)";      // insert statement
                                         cmd = new SqlCommand(sql, con);
 
                                         // set parameters
@@ -184,6 +184,7 @@ namespace OEMS
                                         cmd.Parameters.Add(new SqlParameter("country", country));
                                         cmd.Parameters.Add(new SqlParameter("security_question", security_question));
                                         cmd.Parameters.Add(new SqlParameter("security_answer", security_answer));
+                                        cmd.Parameters.Add(new SqlParameter("email", txt_email.Text.Trim()));
 
                                         cmd.ExecuteNonQuery();
                                         
@@ -228,6 +229,7 @@ namespace OEMS
             txt_confirm_password.Attributes.Add("value", null);
             txt_firstname.Text = null;
             txt_lastname.Text = null;
+            txt_email.Text = null;
             rb_male.Checked = true;
             txt_address1.Text = null;
             txt_address2.Text = null;

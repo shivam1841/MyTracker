@@ -263,7 +263,7 @@ namespace OEMS
             string db_answer = cmd.ExecuteScalar().ToString();
 
             // COMPARE USER ENTERED ANSWER WITH STORED ANSWER
-            if (String.Equals(db_answer, txt_answer.Text.Trim()))
+            if (String.Equals(db_answer, txt_answer.Text.Trim().ToLower()))
             {
                 // IF THE ANSWER IS CORRECT
                 lbl_response.Visible = false;

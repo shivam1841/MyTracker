@@ -119,6 +119,17 @@
                 </tr>
                 <tr>
                     <td align="right">
+                        <asp:Label ID="Label12" runat="server" Text="Email:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_email" runat="server" Width="225px"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RegularExpressionValidator ID="validator_email" runat="server" ErrorMessage="Not a valid email" ControlToValidate="txt_email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
                         <asp:Label ID="Label9" runat="server" Text="Gender:"></asp:Label>
                     </td>
                     <td class="auto-style5">
