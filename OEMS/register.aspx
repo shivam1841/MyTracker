@@ -17,7 +17,7 @@
         }
 
         .auto-style4 {
-            height: 23px;
+            height: 14px;
             width: 169px;
         }
 
@@ -26,6 +26,42 @@
         }
 
         .auto-style6 {
+            width: 10px;
+        }
+        .auto-style7 {
+            height: 54px;
+            width: 180px;
+        }
+        .auto-style8 {
+            height: 54px;
+            width: 169px;
+        }
+        .auto-style9 {
+            height: 54px;
+            width: 10px;
+        }
+        .auto-style10 {
+            height: 19px;
+            width: 180px;
+        }
+        .auto-style11 {
+            height: 19px;
+            width: 169px;
+        }
+        .auto-style12 {
+            height: 19px;
+            width: 10px;
+        }
+        .auto-style13 {
+            height: 8px;
+            width: 180px;
+        }
+        .auto-style14 {
+            height: 8px;
+            width: 169px;
+        }
+        .auto-style15 {
+            height: 8px;
             width: 10px;
         }
     </style>
@@ -195,20 +231,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td class="auto-style7" align="right" valign="top">
                         <strong>
                             <asp:Label ID="Label19" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="13pt" Text="Security Details"></asp:Label>
                         </strong></td>
-                    <td class="auto-style4">
+                    <td class="auto-style8" valign="top">
                         <asp:Label ID="Label13" runat="server" Font-Size="Small" ForeColor="Red" Text="(will be used during password recovery)"></asp:Label>
                     </td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td class="auto-style10" align="right" valign="top">
                         <asp:Label ID="Label14" runat="server" Text="Security Question:"></asp:Label>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style11">
                         <asp:DropDownList ID="ddl_question" runat="server" Height="25px" Width="225px">
                             <asp:ListItem>What year did you graduate in?</asp:ListItem>
                             <asp:ListItem>What is the first name of your best friend in high school?</asp:ListItem>
@@ -216,48 +252,48 @@
                             <asp:ListItem>In what town or city was your first full time job?</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td class="auto-style3" align="right" valign="top">
                         <asp:Label ID="Label15" runat="server" Text="Security Answer:"></asp:Label>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style5">
                         <asp:TextBox ID="txt_answer" runat="server" Width="225px"></asp:TextBox>
                     </td>
-                    <td class="auto-style1">
+                    <td class="auto-style6">
                         <asp:Label ID="lbl_answer_star" runat="server" Text="*" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style3" align="right" valign="top"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td class="auto-style13" align="right" valign="top">
                         <asp:Button ID="btn_register" runat="server" Text="Register" OnClick="btn_register_Click" />
                     </td>
-                    <td class="auto-style4" align="center">
+                    <td class="auto-style14" align="center" valign="top">
                         <asp:Button ID="btn_reset" runat="server" Text="Reset" Width="71px" BackColor="LightGray" OnClick="btn_reset_Click" />
                     </td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style15"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td class="auto-style3" align="right" valign="top">
                         <asp:Label ID="Label16" runat="server" Text="Already Registered?"></asp:Label>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style5">
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/login.aspx">(click here to login)</asp:HyperLink>
                     </td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style6"></td>
                 </tr>
             </table>
         </asp:Panel>
     </div>
 
     <div align="center">
-        <asp:Panel runat="server" ID="success_message" Font-Names="Forte" Font-Size="16pt" BorderStyle="Inset" BorderWidth="5px" HorizontalAlign="Center">
+        <asp:Panel runat="server" ID="success_message" Font-Names="Forte" Font-Size="16pt" BorderStyle="Inset" BorderWidth="5px" HorizontalAlign="Center" style="margin-top: 0px">
             <asp:Label ID="Label20" runat="server" Text="Registration successful. . ."></asp:Label>
             <br />
             <asp:Label ID="Label21" runat="server" Text="Signing in, please wait. . ."></asp:Label>

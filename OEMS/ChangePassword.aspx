@@ -36,10 +36,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">
+                    <td>
                         <asp:Label ID="Label4" runat="server" Text="Confirm Password: "></asp:Label>
                     </td>
-                    <td class="auto-style1">
+                    <td>
                         <asp:TextBox ID="txt_confirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                      <td>

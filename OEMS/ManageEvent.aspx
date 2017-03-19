@@ -123,11 +123,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style1">
+                                <td>
                                     <asp:Label ID="Label3" runat="server" Text="End DateTime">
                                     </asp:Label>
                                 </td>
-                                <td class="auto-style1">
+                                <td>
                                     <asp:DropDownList ID="ddl_Month_end" runat="server">
                                         <asp:ListItem Value="1">Jan</asp:ListItem>
                                         <asp:ListItem Value="2">Feb</asp:ListItem>

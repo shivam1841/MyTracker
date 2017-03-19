@@ -22,10 +22,10 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">
+                <td>
                     <asp:Label ID="lblEventTypeID" runat="server" Text="Event ID:"></asp:Label>
                 </td>
-                <td class="auto-style1" colspan="2">
+                <td colspan="2">
                     <asp:TextBox ID="txt_eventID" runat="server" ReadOnly="True"></asp:TextBox>
                     <asp:Label ID="lblEventTypeID0" runat="server" Text="Unique ID assigned to each event" Font-Size="11pt" ForeColor="Blue"></asp:Label>
                 </td>
@@ -118,11 +118,11 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">
+                <td>
                     <asp:Label ID="Label1" runat="server" Text="End DateTime">
                     </asp:Label>
                 </td>
-                <td class="auto-style1">
+                <td>
                     <asp:DropDownList ID="ddl_Month_end" runat="server">
                         <asp:ListItem Value="1">Jan</asp:ListItem>
                         <asp:ListItem Value="2">Feb</asp:ListItem>

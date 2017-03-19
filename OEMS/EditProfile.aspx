@@ -5,9 +5,23 @@
         .auto-style1 {
             height: 26px;
         }
+        .auto-style2 {
+            height: 26px;;
+        }
+        .auto-style7 {
+            height: 21px;
+        }
+        .auto-style8 {
+            height: 10px;
+        }
+        .auto-style9 {
+            width: 50%;
+        }
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div>
         <asp:Panel runat="server" ID="panel_fetchData">
             <table style="width: 50%;" align="center" border="0" bgcolor="#E4BA1E">
@@ -26,6 +40,7 @@
             <table style="width: 50%;" align="center" border="0" bgcolor="#E4BA1E">
                 <tr>
                     <td colspan="3" align="center">
+                        <hr />
                         <asp:Label ID="Label2" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="16pt" Text="Update Profile"></asp:Label>
                     </td>
                 </tr>
@@ -35,33 +50,32 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <hr />
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="center" colspan="3">&nbsp;<strong><asp:Label ID="Label18" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="13pt" Text="Personal Details"></asp:Label>
+                    <td align="center" colspan="3">&nbsp;<strong><asp:Label ID="Label18" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="13pt" Text="Personal Details"></asp:Label>
                     </strong>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="right">
+                    <td align="right">
                         <asp:Label ID="Label5" runat="server" Text="First Name:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td>
                         <asp:TextBox ID="txt_firstname" runat="server" Width="225px"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">
+                    <td>
                         <asp:Label ID="lbl_firstname_star" runat="server" Text="*" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="right">
+                    <td align="right">
                         <asp:Label ID="Label6" runat="server" Text="Last Name:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td>
                         <asp:TextBox ID="txt_lastname" runat="server" Width="225px"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td></td>
                 </tr>
                  <tr>
                     <td align="right">
@@ -78,38 +92,38 @@
                     <td align="right">
                         <asp:Label ID="Label9" runat="server" Text="Gender:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td>
                         <asp:RadioButton ID="rb_male" runat="server" Text="Male" Checked="True" GroupName="gender" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RadioButton ID="rb_female" runat="server" Text="Female" GroupName="gender" />
                     </td>
-                    <td class="auto-style6"></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="right" valign="top">
+                    <td align="right" valign="top">
                         <asp:Label ID="Label7" runat="server" Text="Address 1:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td>
                         <asp:TextBox ID="txt_address1" runat="server" Width="225px" Height="70px" TextMode="MultiLine"></asp:TextBox>
                     </td>
-                    <td valign="top" class="auto-style6">
+                    <td valign="top">
                         <asp:Label ID="lbl_address1_star" runat="server" Text="*" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="right" valign="top">
+                    <td class="auto-style8" align="right" valign="top">
                         <asp:Label ID="Label8" runat="server" Text="Address 2:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td class="auto-style8">
                         <asp:TextBox ID="txt_address2" runat="server" Width="225px" Height="70px" TextMode="MultiLine"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="right" valign="top">
+                    <td align="right" valign="top">
                         <asp:Label ID="Label10" runat="server" Text="Province:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td>
                         <asp:DropDownList ID="ddl_province" runat="server" Height="25px" Width="70px">
                             <asp:ListItem>AB</asp:ListItem>
                             <asp:ListItem>BC</asp:ListItem>
@@ -122,18 +136,18 @@
                             <asp:ListItem>SK</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" align="right" valign="top">
+                    <td align="right" valign="top">
                         <asp:Label ID="Label11" runat="server" Text="Country:"></asp:Label>
                     </td>
-                    <td class="auto-style5">
+                    <td>
                         <asp:DropDownList ID="ddl_country" runat="server" Height="25px" Width="85px">
                             <asp:ListItem>Canada</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td colspan="3">
@@ -141,20 +155,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td class="auto-style7" align="right" valign="top">
                         <strong>
                             <asp:Label ID="Label19" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="13pt" Text="Security Details"></asp:Label>
                         </strong></td>
-                    <td class="auto-style4">
+                    <td class="auto-style7">
                         <asp:Label ID="Label13" runat="server" Font-Size="Small" ForeColor="Red" Text="(will be used during password recovery)"></asp:Label>
                     </td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style7"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td align="right" valign="top">
                         <asp:Label ID="Label14" runat="server" Text="Security Question:"></asp:Label>
                     </td>
-                    <td class="auto-style4">
+                    <td>
                         <asp:DropDownList ID="ddl_question" runat="server" Height="25px" Width="225px">
                             <asp:ListItem>What year did you graduate in?</asp:ListItem>
                             <asp:ListItem>What is the first name of your best friend in high school?</asp:ListItem>
@@ -162,23 +176,23 @@
                             <asp:ListItem>In what town or city was your first full time job?</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">
+                    <td align="right" valign="top">
                         <asp:Label ID="Label15" runat="server" Text="Security Answer:"></asp:Label>
                     </td>
-                    <td class="auto-style4">
+                    <td>
                         <asp:TextBox ID="txt_answer" runat="server" Width="225px"></asp:TextBox>
                     </td>
-                    <td class="auto-style1">
+                    <td>
                         <asp:Label ID="lbl_answer_star" runat="server" Text="*" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" align="right" valign="top">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td align="right" valign="top"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="auto-style2" align="center" valign="top" colspan="3">
@@ -190,7 +204,7 @@
         </asp:Panel>
 
         <asp:Panel runat="server" ID="panel_deleteProfile">
-            <table style="width: 50%;" align="center" border="0" bgcolor="#E4BA1E">
+            <table align="center" border="0" bgcolor="#E4BA1E" class="auto-style9">
                 <tr>
                     <td colspan="2" align="center">
                         <asp:Label ID="Label3" runat="server" Font-Bold="False" Font-Names="Forte" Font-Size="16pt" Text="Verify Password"></asp:Label>
