@@ -201,6 +201,7 @@
     <Content Include="AdminPanel\AdminEventsReport.aspx" />
     <Content Include="AdminPanel\AdminLogin.aspx" />
     <Content Include="AdminPanel\AdminManageEvents.aspx" />
+    <Content Include="AdminPanel\AdminUsersReport.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -414,6 +415,13 @@
     </Compile>
     <Compile Include="AdminPanel\AdminManageEvents.aspx.designer.cs">
       <DependentUpon>AdminManageEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminUsersReport.aspx.cs">
+      <DependentUpon>AdminUsersReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminUsersReport.aspx.designer.cs">
+      <DependentUpon>AdminUsersReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

@@ -6,7 +6,7 @@
     <div align="center">
         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="My Events" Font-Bold="True" Font-Names="Goudy Stout" Font-Size="18pt"></asp:Label>
         <hr />
-        <asp:GridView ID="gv_eventlist" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="event_id" DataSourceID="ds_eventlist" PageSize="5" AllowSorting="True" SelectedIndex="0" Width="446px" OnSelectedIndexChanged="gv_eventlist_SelectedIndexChanged">
+        <asp:GridView ID="gv_eventlist" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="event_id" DataSourceID="gv_ds_cloudDB" PageSize="5" AllowSorting="True" SelectedIndex="0" Width="446px" OnSelectedIndexChanged="gv_eventlist_SelectedIndexChanged">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="event_id" HeaderText="ID" ReadOnly="True" SortExpression="event_id" />
@@ -24,11 +24,16 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
+        <asp:SqlDataSource ID="gv_ds_cloudDB" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_location], [event_activity] FROM [event] WHERE ([user_name] = @user_name)">
+            <SelectParameters>
+                <asp:SessionParameter Name="user_name" SessionField="username" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <asp:Label ID="Label2" runat="server" ForeColor="Blue" Text="(Select event to view detailed information)"></asp:Label>
     </div>
     <hr />
     <div align="center">
-        <asp:DetailsView ID="dv_event_details" runat="server" Height="50px" Width="380px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="5px" CellPadding="5" DataKeyNames="event_id" DataSourceID="ds_eventDetail" ForeColor="Black" GridLines="Horizontal" BorderStyle="Groove" HeaderText="Event Details" HorizontalAlign="Center">
+        <asp:DetailsView ID="dv_event_details" runat="server" Height="50px" Width="380px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="5px" CellPadding="5" DataKeyNames="event_id" DataSourceID="lv_ds_eventDetails" ForeColor="Black" GridLines="Horizontal" BorderStyle="Groove" HeaderText="Event Details" HorizontalAlign="Center">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <EditRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
             <Fields>
@@ -47,20 +52,15 @@
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
             <PagerStyle ForeColor="DarkSlateBlue" HorizontalAlign="Center" BackColor="PaleGoldenrod" />
         </asp:DetailsView>
+        <asp:SqlDataSource ID="lv_ds_eventDetails" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant] FROM [event] WHERE ([event_id] = @event_id)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="gv_eventlist" Name="event_id" PropertyName="SelectedValue" Type="Decimal" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <asp:Label ID="Label3" runat="server" Text="To update details "></asp:Label>
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ManageEvent.aspx">click here</asp:HyperLink>
         <br />
         <asp:Button ID="btn_printPage" runat="server" Text="Print Details" OnClientClick="javascript:window.print();" Height="35px" />
 
-        <asp:SqlDataSource ID="ds_eventDetail" runat="server" ConnectionString="<%$ ConnectionStrings:myTracker_DBConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant] FROM [event] WHERE ([event_id] = @event_id)">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="gv_eventlist" Name="event_id" PropertyName="SelectedValue" Type="Decimal" />
-            </SelectParameters>
-        </asp:SqlDataSource>
     </div>
-    <asp:SqlDataSource ID="ds_eventlist" runat="server" ConnectionString="<%$ ConnectionStrings:myTracker_DBConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [event_location], [event_activity] FROM [event] WHERE ([user_name] = @user_name)">
-        <SelectParameters>
-            <asp:SessionParameter Name="user_name" SessionField="username" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-</asp:Content>
+    </asp:Content>

@@ -8,7 +8,7 @@ namespace OEMS
 {
     public class global_variable
     {
-        public static string con = "Data Source=DESKTOP-6DAVLBI\\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True";
+        public static string con = "Data Source=mytracker.database.windows.net;Initial Catalog=myTracker;Persist Security Info=True;User ID=harsh;Password=Admin@mytracker";
 
         public string getConnectionString()
         {

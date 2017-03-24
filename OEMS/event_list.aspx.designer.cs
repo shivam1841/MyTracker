@@ -31,6 +31,15 @@ namespace OEMS {
         protected global::System.Web.UI.WebControls.GridView gv_eventlist;
         
         /// <summary>
+        /// gv_ds_cloudDB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_cloudDB;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace OEMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DetailsView dv_event_details;
+        
+        /// <summary>
+        /// lv_ds_eventDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource lv_ds_eventDetails;
         
         /// <summary>
         /// Label3 control.
@@ -74,23 +92,5 @@ namespace OEMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_printPage;
-        
-        /// <summary>
-        /// ds_eventDetail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds_eventDetail;
-        
-        /// <summary>
-        /// ds_eventlist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds_eventlist;
     }
 }

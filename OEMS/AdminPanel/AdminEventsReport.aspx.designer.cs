@@ -31,13 +31,13 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.GridView gv_eventlist;
         
         /// <summary>
-        /// EventReport_Admin control.
+        /// gv_ds_cloudDB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource EventReport_Admin;
+        protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_cloudDB;
         
         /// <summary>
         /// Label2 control.
@@ -58,13 +58,13 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.DetailsView dv_event_details;
         
         /// <summary>
-        /// EventDetails_Admin control.
+        /// dv_ds_eventDetails_admin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource EventDetails_Admin;
+        protected global::System.Web.UI.WebControls.SqlDataSource dv_ds_eventDetails_admin;
         
         /// <summary>
         /// Label3 control.

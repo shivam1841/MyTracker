@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">
-                    <asp:GridView ID="gv_participating_event" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="730px" AllowPaging="True" PageSize="5" AutoGenerateColumns="False" DataKeyNames="event_id" DataSourceID="ds_participating_events" OnSelectedIndexChanged="gv_participating_event_SelectedIndexChanged" SelectedIndex="0">
+                    <asp:GridView ID="gv_participating_event" runat="server" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" Width="730px" AllowPaging="True" PageSize="5" AutoGenerateColumns="False" DataKeyNames="event_id" DataSourceID="gv_ds_cloudDB" OnSelectedIndexChanged="gv_participating_event_SelectedIndexChanged" SelectedIndex="0">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="event_id" HeaderText="ID" ReadOnly="True" SortExpression="event_id" />
@@ -51,13 +51,13 @@
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:Label ID="Label2" runat="server" ForeColor="Blue" Text="(Select event to view detailed information)"></asp:Label>
-
-                    <asp:SqlDataSource ID="ds_participating_events" runat="server" ConnectionString="<%$ ConnectionStrings:myTracker_DBConnectionString %>" SelectCommand="SELECT event.event_id, event.event_name, event.event_description, event.event_location, event.event_activity, event_participants.assigned_by FROM event INNER JOIN event_participants ON event.event_id = event_participants.event_id WHERE (event_participants.user_name = @user_name) AND (event.end_date &gt; SYSDATETIME())">
+                    <asp:SqlDataSource ID="gv_ds_cloudDB" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT event.event_id, event.event_name, event.event_description, event.event_location, event.event_activity, event_participants.assigned_by FROM event INNER JOIN event_participants ON event.event_id = event_participants.event_id WHERE (event_participants.user_name = @user_name) AND (event.end_date &gt; SYSDATETIME())">
                         <SelectParameters>
                             <asp:SessionParameter Name="user_name" SessionField="username" />
                         </SelectParameters>
                     </asp:SqlDataSource>
+                    <asp:Label ID="Label2" runat="server" ForeColor="Blue" Text="(Select event to view detailed information)"></asp:Label>
+
                 </td>
             </tr>
             <tr>
@@ -67,7 +67,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:DetailsView ID="dv_participating_event" runat="server" Height="50px" Width="350px" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="event_id" DataSourceID="SqlDataSource1" GridLines="Horizontal" HeaderText="Event Details">
+                    <asp:DetailsView ID="dv_participating_event" runat="server" Height="50px" Width="350px" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="event_id" DataSourceID="lv_ds_eventDetails" GridLines="Horizontal" HeaderText="Event Details">
                         <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                         <Fields>
                             <asp:BoundField DataField="event_id" HeaderText="ID" ReadOnly="True" SortExpression="event_id" />
@@ -85,7 +85,7 @@
                         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
                         <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
                     </asp:DetailsView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:myTracker_DBConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity] FROM [event] WHERE ([event_id] = @event_id)">
+                    <asp:SqlDataSource ID="lv_ds_eventDetails" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity] FROM [event] WHERE ([event_id] = @event_id)">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="gv_participating_event" Name="event_id" PropertyName="SelectedValue" Type="Decimal" />
                         </SelectParameters>
@@ -93,9 +93,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="right" class="auto-style4">Not interested? 
-                </td>
-                <td align="left">
+                <td class="auto-style4">Not interested?
                     <asp:Button ID="btn_removeEvent" runat="server" Text="Remove me from this event" OnClick="btn_removeEvent_Click" />
                 </td>
             </tr>

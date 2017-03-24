@@ -131,6 +131,7 @@ namespace OEMS
                      */
 
                     lbl_response.Text = "Current password is not correct. . .";
+                    lbl_response.ForeColor = System.Drawing.Color.Red;
                     lbl_response.Visible = true;
                     lbl_oldPassword_star.Visible = true;
                 }

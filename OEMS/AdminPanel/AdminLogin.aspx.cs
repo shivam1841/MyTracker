@@ -83,7 +83,7 @@ namespace OEMS.AdminPanel
                                 mainMenu.Visible = true;
                                 Session["admin"] = txt_username.Text.ToLower().Trim();
 
-                                Response.Redirect("~/AdminPanel/AdminEventsReport.aspx");
+                                Response.Redirect("~/AdminPanel/AdminUsersReport.aspx");
                                 break;
                             }
                             else

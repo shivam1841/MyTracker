@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OEMS {
+namespace OEMS.AdminPanel {
     
     
-    public partial class participating_events {
+    public partial class AdminUsersReport {
         
         /// <summary>
         /// Label1 control.
@@ -22,57 +22,48 @@ namespace OEMS {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// gv_participating_event control.
+        /// gv_userReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_participating_event;
+        protected global::System.Web.UI.WebControls.GridView gv_userReport;
         
         /// <summary>
-        /// gv_ds_cloudDB control.
+        /// gv_ds_userReport_admin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_cloudDB;
+        protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_userReport_admin;
         
         /// <summary>
-        /// Label2 control.
+        /// dv_userDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.DetailsView dv_userDetails;
         
         /// <summary>
-        /// dv_participating_event control.
+        /// dv_ds_userDetails_admin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView dv_participating_event;
+        protected global::System.Web.UI.WebControls.SqlDataSource dv_ds_userDetails_admin;
         
         /// <summary>
-        /// lv_ds_eventDetails control.
+        /// btn_printPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource lv_ds_eventDetails;
-        
-        /// <summary>
-        /// btn_removeEvent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_removeEvent;
+        protected global::System.Web.UI.WebControls.Button btn_printPage;
     }
 }

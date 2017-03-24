@@ -26,7 +26,7 @@ namespace OEMS.AdminPanel
             }
             if (Menu1.SelectedValue == "Monitor User")
             {
-                //Response.Redirect("~/AdminPanel/.aspx");
+                Response.Redirect("~/AdminPanel/AdminUsersReport.aspx");
             }
             if (Menu1.SelectedValue == "Manage User")
             {
