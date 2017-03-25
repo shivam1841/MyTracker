@@ -39,6 +39,14 @@ namespace OEMS
             {
                 Response.Redirect("~/event_list.aspx");
             }
+            if (Menu1.SelectedValue == "My Events")
+            {
+                Response.Redirect("~/event_list.aspx");
+            }
+            if (Menu1.SelectedValue == "Public Events")
+            {
+                Response.Redirect("~/PublicEventList.aspx");
+            }
             if (Menu1.SelectedValue == "Edit Profile")
             {
                 Response.Redirect("~/EditProfile.aspx");

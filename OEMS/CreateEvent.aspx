@@ -245,6 +245,13 @@
                 &nbsp;</td>
             </tr>
             <tr>
+                <td>&nbsp;</td>
+                <td colspan="0" align="left">
+                    <asp:CheckBox ID="cb_isPublic" runat="server" Text="Make this event public" />
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
                 <td colspan="2" align="center">
                     <asp:Button ID="btnCretaeEvent" runat="server" Text="Create"
                         Height="34px" Width="83px" OnClick="btnCretaeEvent_Click" />

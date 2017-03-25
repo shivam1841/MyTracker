@@ -104,9 +104,19 @@ namespace OEMS
                     // if participant is valid, create event
                     if (isParticipantValid)
                     {
+                        string isPublic = "no";
+                        if (cb_isPublic.Checked)
+                        {
+                            isPublic = "yes";
+                        }
+                        else
+                        {
+                            isPublic = "no";
+                        }
+
                         // create event
                         con.Open();
-                        sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username, @participant)";
+                        sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username, @participant, @isPublic)";
                         cmd = new SqlCommand(sql, con);
 
                         // set parameters
@@ -121,6 +131,7 @@ namespace OEMS
                         cmd.Parameters.Add(new SqlParameter("activity", txtActivity.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("username", user.ToLower().Trim()));
                         cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.ToLower().Trim()));
+                        cmd.Parameters.Add(new SqlParameter("isPublic", isPublic));
 
                         cmd.ExecuteNonQuery();
                         lblResponseMessage.Text = "Event created successfully. . .";
@@ -179,9 +190,19 @@ namespace OEMS
                 }
                 else
                 {
+                    string isPublic = "no";
+                    if (cb_isPublic.Checked)
+                    {
+                        isPublic = "yes";
+                    }
+                    else
+                    {
+                        isPublic = "no";
+                    }
+
                     // if participant is not entered, create event without participant
                     con.Open();
-                    sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username, @participant)";
+                    sql = "INSERT INTO [event] VALUES (@event_id, @event_name, @event_desc, @event_start, @event_end, @location, @city, @province, @activity, @username, @participant, @isPublic)";
                     cmd = new SqlCommand(sql, con);
 
                     // set parameters
@@ -196,6 +217,7 @@ namespace OEMS
                     cmd.Parameters.Add(new SqlParameter("activity", txtActivity.Text.Trim()));
                     cmd.Parameters.Add(new SqlParameter("username", Session["username"]));
                     cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.ToLower().Trim()));
+                    cmd.Parameters.Add(new SqlParameter("isPublic", isPublic));
 
                     cmd.ExecuteNonQuery();
                     lblResponseMessage.Text = "Event created successfully. . .";

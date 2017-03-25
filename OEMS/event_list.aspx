@@ -47,12 +47,13 @@
                 <asp:BoundField DataField="event_province" HeaderText="Province" SortExpression="event_province" />
                 <asp:BoundField DataField="event_activity" HeaderText="Activity" SortExpression="event_activity" />
                 <asp:BoundField DataField="participant" HeaderText="Participant" SortExpression="participant" />
+                <asp:BoundField DataField="public" HeaderText="Is it Public?" SortExpression="public" />
             </Fields>
             <FooterStyle BackColor="Tan" />
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
             <PagerStyle ForeColor="DarkSlateBlue" HorizontalAlign="Center" BackColor="PaleGoldenrod" />
         </asp:DetailsView>
-        <asp:SqlDataSource ID="lv_ds_eventDetails" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant] FROM [event] WHERE ([event_id] = @event_id)">
+        <asp:SqlDataSource ID="lv_ds_eventDetails" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant], [public] FROM [event] WHERE ([event_id] = @event_id)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="gv_eventlist" Name="event_id" PropertyName="SelectedValue" Type="Decimal" />
             </SelectParameters>
@@ -63,4 +64,4 @@
         <asp:Button ID="btn_printPage" runat="server" Text="Print Details" OnClientClick="javascript:window.print();" Height="35px" />
 
     </div>
-    </asp:Content>
+</asp:Content>

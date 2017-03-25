@@ -120,7 +120,7 @@ namespace OEMS
 
                     // perform data fetch and populate fields
                     con.Open();
-                    sql = "SELECT event_name, event_description, start_date, end_date, event_location, event_city, event_province, event_activity, participant FROM [event] WHERE event_id = @event_id";
+                    sql = "SELECT event_name, event_description, start_date, end_date, event_location, event_city, event_province, event_activity, participant, [public] FROM [event] WHERE event_id = @event_id";
                     cmd = new SqlCommand(sql, con);
                     cmd.Parameters.Add(new SqlParameter("event_id", txt_event_id.Text.Trim()));
                     reader = cmd.ExecuteReader();
@@ -345,6 +345,16 @@ namespace OEMS
                         ddl_province.Text = reader.GetString(6);
                         txtActivity.Text = reader.GetString(7);
                         txt_participant.Text = reader.GetString(8).ToString();
+                        string isPublic = reader.GetString(9).ToString();
+
+                        if (isPublic == "yes")
+                        {
+                            cb_isPublic.Checked = true;
+                        }
+                        else
+                        {
+                            cb_isPublic.Checked = false;
+                        }
 
                         panel_data.Enabled = true;
                     }
@@ -443,9 +453,19 @@ namespace OEMS
                         // if participant is valid, create event
                         if (isParticipantValid)
                         {
+                            string isPublic = "no";
+                            if (cb_isPublic.Checked)
+                            {
+                                isPublic = "yes";
+                            }
+                            else
+                            {
+                                isPublic = "no";
+                            }
+
                             // update event
                             con.Open();
-                            sql = "UPDATE [event] SET event_name = @event_name, event_description = @event_description, start_date = @start_date, end_date = @end_date, event_location = @event_location, event_city = @event_city, event_province = @event_province, event_activity = @event_activity, participant = @participant WHERE event_id = @eventID";
+                            sql = "UPDATE [event] SET event_name = @event_name, event_description = @event_description, start_date = @start_date, end_date = @end_date, event_location = @event_location, event_city = @event_city, event_province = @event_province, event_activity = @event_activity, participant = @participant, [public] = @isPublic WHERE event_id = @eventID";
                             cmd = new SqlCommand(sql, con);
 
                             // set parameters
@@ -459,6 +479,7 @@ namespace OEMS
                             cmd.Parameters.Add(new SqlParameter("event_province", ddl_province.SelectedValue));
                             cmd.Parameters.Add(new SqlParameter("event_activity", txtActivity.Text.Trim()));
                             cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.ToLower().Trim()));
+                            cmd.Parameters.Add(new SqlParameter("isPublic", isPublic));
 
                             cmd.ExecuteNonQuery();
                             lblResponseMessage.Text = "Event updated successfully. . .";
@@ -511,9 +532,19 @@ namespace OEMS
                     }
                     else
                     {
+                        string isPublic = "no";
+                        if (cb_isPublic.Checked)
+                        {
+                            isPublic = "yes";
+                        }
+                        else
+                        {
+                            isPublic = "no";
+                        }
+
                         // if participant is not entered, create event without participant
                         con.Open();
-                        sql = "UPDATE [event] SET event_name = @event_name, event_description = @event_description, start_date = @start_date, end_date = @end_date, event_location = @event_location, event_city = @event_city, event_province = @event_province, event_activity = @event_activity, participant = @participant WHERE event_id = @event_id";
+                        sql = "UPDATE [event] SET event_name = @event_name, event_description = @event_description, start_date = @start_date, end_date = @end_date, event_location = @event_location, event_city = @event_city, event_province = @event_province, event_activity = @event_activity, participant = @participant, [public] = @isPublic WHERE event_id = @event_id";
                         cmd = new SqlCommand(sql, con);
 
                         // set parameters
@@ -527,6 +558,7 @@ namespace OEMS
                         cmd.Parameters.Add(new SqlParameter("event_province", ddl_province.SelectedValue));
                         cmd.Parameters.Add(new SqlParameter("event_activity", txtActivity.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("participant", txt_participant.Text.ToLower().Trim()));
+                        cmd.Parameters.Add(new SqlParameter("isPublic", isPublic));
 
                         cmd.ExecuteNonQuery();
                         lblResponseMessage.Text = "Event updated successfully. . .";

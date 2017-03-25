@@ -231,6 +231,7 @@
     <Content Include="AdminPanel\Admin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="participating_events.aspx" />
+    <Content Include="PublicEventList.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -517,6 +518,13 @@
       <DependentUpon>participating_events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicEventList.aspx.cs">
+      <DependentUpon>PublicEventList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicEventList.aspx.designer.cs">
+      <DependentUpon>PublicEventList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

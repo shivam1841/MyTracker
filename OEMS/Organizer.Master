@@ -38,7 +38,10 @@
                                         <asp:MenuItem Text="Events I am Participating" Value="Events I am Participating"></asp:MenuItem>
                                     </asp:MenuItem>
                                     <asp:MenuItem Text="Create Event" Value="Create Event"></asp:MenuItem>
-                                    <asp:MenuItem Text="Event List" Value="Event List"></asp:MenuItem>
+                                    <asp:MenuItem Text="Event List" Value="Event List">
+                                        <asp:MenuItem Text="My Events" Value="My Events"></asp:MenuItem>
+                                        <asp:MenuItem Text="Public Events" Value="Public Events"></asp:MenuItem>
+                                    </asp:MenuItem>
                                     <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>
                                     <asp:MenuItem Text="Edit Profile" Value="Edit Profile"></asp:MenuItem>
                                     <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
