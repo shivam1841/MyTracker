@@ -33,26 +33,48 @@
     </div>
     <hr />
     <div align="center">
-        <asp:DetailsView ID="dv_event_details" runat="server" Height="50px" Width="380px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="5px" CellPadding="5" DataKeyNames="event_id" DataSourceID="lv_ds_eventDetails" ForeColor="Black" GridLines="Horizontal" BorderStyle="Groove" HeaderText="Event Details" HorizontalAlign="Center">
-            <AlternatingRowStyle BackColor="PaleGoldenrod" />
-            <EditRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-            <Fields>
-                <asp:BoundField DataField="event_id" HeaderText="ID" ReadOnly="True" SortExpression="event_id" />
-                <asp:BoundField DataField="event_name" HeaderText="Name" SortExpression="event_name" />
-                <asp:BoundField DataField="event_description" HeaderText="Description" SortExpression="event_description" />
-                <asp:BoundField DataField="start_date" HeaderText="Start Date" SortExpression="start_date" />
-                <asp:BoundField DataField="end_date" HeaderText="End Date" SortExpression="end_date" />
-                <asp:BoundField DataField="event_location" HeaderText="Location" SortExpression="event_location" />
-                <asp:BoundField DataField="event_city" HeaderText="City" SortExpression="event_city" />
-                <asp:BoundField DataField="event_province" HeaderText="Province" SortExpression="event_province" />
-                <asp:BoundField DataField="event_activity" HeaderText="Activity" SortExpression="event_activity" />
-                <asp:BoundField DataField="participant" HeaderText="Participant" SortExpression="participant" />
-                <asp:BoundField DataField="public" HeaderText="Is it Public?" SortExpression="public" />
-            </Fields>
-            <FooterStyle BackColor="Tan" />
-            <HeaderStyle BackColor="Tan" Font-Bold="True" />
-            <PagerStyle ForeColor="DarkSlateBlue" HorizontalAlign="Center" BackColor="PaleGoldenrod" />
-        </asp:DetailsView>
+        <table>
+            <tr>
+                <td rowspan="12">
+                    <asp:DetailsView ID="dv_event_details" runat="server" Height="50px" Width="380px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="5px" CellPadding="5" DataKeyNames="event_id" DataSourceID="lv_ds_eventDetails" ForeColor="Black" GridLines="Horizontal" BorderStyle="Groove" HeaderText="Event Details" HorizontalAlign="Center">
+                        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                        <EditRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                        <Fields>
+                            <asp:BoundField DataField="event_id" HeaderText="ID" ReadOnly="True" SortExpression="event_id" />
+                            <asp:BoundField DataField="event_name" HeaderText="Name" SortExpression="event_name" />
+                            <asp:BoundField DataField="event_description" HeaderText="Description" SortExpression="event_description" />
+                            <asp:BoundField DataField="start_date" HeaderText="Start Date" SortExpression="start_date" />
+                            <asp:BoundField DataField="end_date" HeaderText="End Date" SortExpression="end_date" />
+                            <asp:BoundField DataField="event_location" HeaderText="Location" SortExpression="event_location" />
+                            <asp:BoundField DataField="event_city" HeaderText="City" SortExpression="event_city" />
+                            <asp:BoundField DataField="event_province" HeaderText="Province" SortExpression="event_province" />
+                            <asp:BoundField DataField="event_activity" HeaderText="Activity" SortExpression="event_activity" />
+                            <asp:BoundField DataField="participant" HeaderText="Participant" SortExpression="participant" />
+                            <asp:BoundField DataField="public" HeaderText="Is it Public?" SortExpression="public" />
+                        </Fields>
+                        <FooterStyle BackColor="Tan" />
+                        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                        <PagerStyle ForeColor="DarkSlateBlue" HorizontalAlign="Center" BackColor="PaleGoldenrod" />
+                    </asp:DetailsView>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>
+                    <asp:Button ID="btn_showMap" runat="server" Text="View on map" OnClick="btn_showMap_Click" />
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+        </table>
         <asp:SqlDataSource ID="lv_ds_eventDetails" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant], [public] FROM [event] WHERE ([event_id] = @event_id)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="gv_eventlist" Name="event_id" PropertyName="SelectedValue" Type="Decimal" />

@@ -227,6 +227,7 @@
     <Content Include="image\underConstruction.png" />
     <Content Include="login.aspx" />
     <Content Include="ManageEvent.aspx" />
+    <Content Include="map.html" />
     <Content Include="Organizer.Master" />
     <Content Include="AdminPanel\Admin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

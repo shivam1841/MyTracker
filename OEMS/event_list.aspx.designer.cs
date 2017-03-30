@@ -58,6 +58,15 @@ namespace OEMS {
         protected global::System.Web.UI.WebControls.DetailsView dv_event_details;
         
         /// <summary>
+        /// btn_showMap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_showMap;
+        
+        /// <summary>
         /// lv_ds_eventDetails control.
         /// </summary>
         /// <remarks>

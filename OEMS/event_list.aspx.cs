@@ -72,5 +72,16 @@ namespace OEMS
             string event_id = gv_eventlist.SelectedValue.ToString();
             HyperLink1.NavigateUrl = "ManageEvent.aspx?event_id=" + event_id;         // add parameter to the redirecting link
         }
+
+        protected void btn_showMap_Click(object sender, EventArgs e)
+        {
+            // FETCH THE LOCATION FROM DETAILS VIEW
+            string location = dv_event_details.Rows[5].Cells[1].Text.ToString();
+            string city = dv_event_details.Rows[6].Cells[1].Text.ToString();
+            string province = dv_event_details.Rows[7].Cells[1].Text.ToString();
+            string address = location + "," + city + "," + province;
+            // REDIRECT TO THE MAP WITH THE ADDRESS PARAMETER
+            Response.Redirect("~/map.html?address=" + address);
+        }
     }
 }
