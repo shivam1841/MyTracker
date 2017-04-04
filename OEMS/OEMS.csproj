@@ -201,6 +201,7 @@
     <Content Include="AdminPanel\AdminEventsReport.aspx" />
     <Content Include="AdminPanel\AdminLogin.aspx" />
     <Content Include="AdminPanel\AdminManageEvents.aspx" />
+    <Content Include="AdminPanel\AdminSendEmail.aspx" />
     <Content Include="AdminPanel\AdminUsersReport.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Contact.aspx" />
@@ -417,6 +418,13 @@
     </Compile>
     <Compile Include="AdminPanel\AdminManageEvents.aspx.designer.cs">
       <DependentUpon>AdminManageEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminSendEmail.aspx.cs">
+      <DependentUpon>AdminSendEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminSendEmail.aspx.designer.cs">
+      <DependentUpon>AdminSendEmail.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\AdminUsersReport.aspx.cs">
       <DependentUpon>AdminUsersReport.aspx</DependentUpon>

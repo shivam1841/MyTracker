@@ -23,7 +23,7 @@ namespace OEMS.AdminPanel
             //******************************COPY FOLLOWING CODE IN EVERY PAGE LOAD EVENT************//
             if (Session["admin"] == null)
             {
-                Response.Redirect("~/AdminLogin.aspx");
+                Response.Redirect("~/AdminPanel/AdminLogin.aspx");
             }
             else
             {

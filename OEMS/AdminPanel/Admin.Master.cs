@@ -32,9 +32,9 @@ namespace OEMS.AdminPanel
             {
                 //Response.Redirect("~/AdminPanel/.aspx");
             }
-            if (Menu1.SelectedValue == "Change Password")
+            if (Menu1.SelectedValue == "Send Email")
             {
-                //Response.Redirect("~/AdminPanel/.aspx");
+                Response.Redirect("~/AdminPanel/AdminSendEmail.aspx");
             }
             if (Menu1.SelectedValue == "Logout")
             {

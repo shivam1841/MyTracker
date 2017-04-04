@@ -30,7 +30,7 @@
                                     <asp:MenuItem Text="Manage User" Value="Manage User"></asp:MenuItem>
                                     <asp:MenuItem Text="Monitor Event" Value="Monitor Event"></asp:MenuItem>
                                     <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>
-                                    <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
+                                    <asp:MenuItem Text="Send Email" Value="Send Email"></asp:MenuItem>
                                     <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
                                 </Items>
                                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
