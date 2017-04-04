@@ -86,6 +86,7 @@
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="validator_email" runat="server" ErrorMessage="Not a valid email" ControlToValidate="txt_email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_email" ErrorMessage="Required" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

@@ -11,6 +11,11 @@
 
         <asp:Panel runat="server" ID="panel_email">
             <hr />
+            <div align="right">
+                Search email by Username: <asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
+                <asp:Button ID="btn_search" runat="server" Text="Search" OnClick="btn_search_Click" /><br />
+                <em><small>(If username doesn't exist, first email ID will be selected from list)</small></em>
+            </div>
             <table name="email" border="0">
                 <tr>
                     <td align="right">

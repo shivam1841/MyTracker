@@ -49,6 +49,24 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.Panel panel_email;
         
         /// <summary>
+        /// txt_username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_username;
+        
+        /// <summary>
+        /// btn_search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_search;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>

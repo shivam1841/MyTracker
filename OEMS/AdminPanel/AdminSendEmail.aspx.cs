@@ -107,5 +107,41 @@ namespace OEMS.AdminPanel
             txt_body.Text = "";
             txt_subject.Text = "";
         }
+
+        protected void btn_search_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_username.Text.Trim()))
+            {
+                // if textbox is empty, select first value from dropdown list
+                ddl_emailID.SelectedIndex = 0;
+            }
+            else
+            {
+                // find the username in database and replace the email id
+                con.Open();
+                sql = "select [user_name], [email] from [user]";       // define sql query
+                cmd = new SqlCommand(sql, con);                       // prepare sql command
+                reader = cmd.ExecuteReader();                         // assign SQLCommand to the reader
+
+                //
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) == txt_username.Text.ToLower().Trim())
+                    {
+                        ddl_emailID.Text = reader.GetString(1);
+                        break;
+                    }
+                    else
+                    {
+                        // IF USERNAME NOT FOUND
+                        ddl_emailID.SelectedIndex = 0;
+                    }
+                }
+
+                // close reader and connection while not in use
+                reader.Close();
+                con.Close();
+            }
+        }
     }
 }

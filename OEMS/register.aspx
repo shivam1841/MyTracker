@@ -16,11 +16,6 @@
             width: 180px;
         }
 
-        .auto-style4 {
-            height: 14px;
-            width: 169px;
-        }
-
         .auto-style5 {
             width: 169px;
         }
@@ -160,7 +155,8 @@
                     <td>
                         <asp:TextBox ID="txt_email" runat="server" Width="225px"></asp:TextBox>
                     </td>
-                    <td>
+                    <td class="auto-style6">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_email" ErrorMessage="Required" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="validator_email" runat="server" ErrorMessage="Not a valid email" ControlToValidate="txt_email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
