@@ -10,7 +10,7 @@
 namespace OEMS.AdminPanel {
     
     
-    public partial class AdminUsersReport {
+    public partial class AdminBlockUser {
         
         /// <summary>
         /// Label1 control.
@@ -22,40 +22,31 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// gv_userReport control.
+        /// panel_blockUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_userReport;
+        protected global::System.Web.UI.WebControls.Panel panel_blockUser;
         
         /// <summary>
-        /// gv_ds_userReport_admin control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_userReport_admin;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// dv_userDetails control.
+        /// txt_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView dv_userDetails;
-        
-        /// <summary>
-        /// lbl_response control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_response;
+        protected global::System.Web.UI.WebControls.TextBox txt_username;
         
         /// <summary>
         /// btn_block control.
@@ -67,21 +58,12 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.Button btn_block;
         
         /// <summary>
-        /// dv_ds_userDetails_admin control.
+        /// lbl_response control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dv_ds_userDetails_admin;
-        
-        /// <summary>
-        /// btn_printPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_printPage;
+        protected global::System.Web.UI.WebControls.Label lbl_response;
     }
 }

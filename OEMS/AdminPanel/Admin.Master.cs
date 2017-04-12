@@ -30,7 +30,7 @@ namespace OEMS.AdminPanel
             }
             if (Menu1.SelectedValue == "Manage User")
             {
-                //Response.Redirect("~/AdminPanel/.aspx");
+                Response.Redirect("~/AdminPanel/AdminBlockUser.aspx");
             }
             if (Menu1.SelectedValue == "Send Email")
             {

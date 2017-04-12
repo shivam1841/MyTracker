@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace OEMS.AdminPanel
 {
-    public partial class AdminUsersReport : System.Web.UI.Page
+    public partial class AdminBlockUser : System.Web.UI.Page
     {
         // REQUIRED VARIABLE TO CONNECT TO DATABASE
         SqlConnection con;
@@ -17,7 +17,6 @@ namespace OEMS.AdminPanel
         SqlCommand cmd;
         string sql;
         SqlDataReader reader;
-        string username;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,42 +37,23 @@ namespace OEMS.AdminPanel
                 lbl_welcome_user.Text = "Welcome Admin";
                 //******************************COPY ABOVE CODE IN EVERY PAGE LOAD EVENT************//
             }
-            
-            // webpage code
-            if (gv_userReport.Rows.Count == 0)
+
+            // WEBPAGE CODE
+            try
             {
-                Label1.Text = "No events to display";
-                dv_userDetails.Visible = false;
+                if (String.IsNullOrEmpty(Request.QueryString["username"].ToString()))
+                {
+                    Label1.Text = Label1.Text;
+                }
+                else
+                {
+                    Label1.Text = "Redirected " + Request.QueryString["username"].ToString();
+                }
             }
-            else
+            catch (Exception)
             {
-                Label1.Text = "User report";
-                dv_userDetails.Visible = true;
-
-                // ASSIGN SELECTED VALUE FROM GRIDVIEW
-                username = gv_userReport.SelectedValue.ToString();
+                Label1.Text = Label1.Text;
             }
-        }
-
-        protected void gv_userReport_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // ASSIGN SELECTED VALUE FROM GRIDVIEW
-            username = gv_userReport.SelectedValue.ToString();
-
-            //SET USER CONTROL
-            lbl_response.Visible = false;
-        }
-
-        protected void btn_block_Click(object sender, EventArgs e)
-        {
-            con.Open();
-            sql = "UPDATE [user] SET [isBlocked] = @status WHERE [user_name] = @username";
-            cmd = new SqlCommand(sql, con);
-            cmd.Parameters.Add(new SqlParameter("status", "yes"));
-            cmd.Parameters.Add(new SqlParameter("username", username));
-            cmd.ExecuteNonQuery();
-            lbl_response.Visible = true;
-            con.Close();
         }
     }
 }

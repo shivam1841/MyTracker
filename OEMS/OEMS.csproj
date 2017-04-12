@@ -198,6 +198,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AdminPanel\AdminBlockUser.aspx" />
     <Content Include="AdminPanel\AdminEventsReport.aspx" />
     <Content Include="AdminPanel\AdminLogin.aspx" />
     <Content Include="AdminPanel\AdminManageEvents.aspx" />
@@ -397,6 +398,13 @@
     </Compile>
     <Compile Include="AdminPanel\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminBlockUser.aspx.cs">
+      <DependentUpon>AdminBlockUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminBlockUser.aspx.designer.cs">
+      <DependentUpon>AdminBlockUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\AdminEventsReport.aspx.cs">
       <DependentUpon>AdminEventsReport.aspx</DependentUpon>
