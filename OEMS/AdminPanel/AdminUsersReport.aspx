@@ -30,6 +30,8 @@
     </div>
     <hr />
     <div align="center">
+        <asp:Label ID="lbl_status" runat="server" Text="User is blocked" ForeColor="Red" Font-Size="14pt"></asp:Label>
+        <br />
         <br />
         <asp:DetailsView ID="dv_userDetails" runat="server" Height="50px" Width="380px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="5" DataKeyNames="user_name" DataSourceID="dv_ds_userDetails_admin" GridLines="Horizontal" HeaderText="User Details" ForeColor="Black" HorizontalAlign="Center">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
@@ -55,7 +57,7 @@
         </asp:DetailsView>
         <asp:Label ID="lbl_response" runat="server" Font-Size="14pt" ForeColor="Blue" Text="User blocked successfully. . ." Visible="False"></asp:Label>
         <br />
-        <asp:Button ID="btn_block" runat="server" Height="35px" OnClick="btn_block_Click" Text="Block User" Width="85px" />
+        <asp:Button ID="btn_block" runat="server" Height="35px" OnClick="btn_block_Click" Text="Block/ Unblock User" />
         <br />
         <asp:SqlDataSource ID="dv_ds_userDetails_admin" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT * FROM [user] WHERE ([user_name] = @user_name)">
             <SelectParameters>

@@ -40,6 +40,15 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_userReport_admin;
         
         /// <summary>
+        /// lbl_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_status;
+        
+        /// <summary>
         /// dv_userDetails control.
         /// </summary>
         /// <remarks>

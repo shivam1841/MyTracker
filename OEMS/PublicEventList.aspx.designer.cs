@@ -22,6 +22,42 @@ namespace OEMS {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// txt_keyword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_keyword;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// btn_clearSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_clearSearch;
+        
+        /// <summary>
         /// gv_eventlist control.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,15 @@ namespace OEMS {
         protected global::System.Web.UI.WebControls.DetailsView dv_event_details;
         
         /// <summary>
+        /// btn_showMap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_showMap;
+        
+        /// <summary>
         /// dv_ds_publicEventDetails control.
         /// </summary>
         /// <remarks>
@@ -65,6 +110,15 @@ namespace OEMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dv_ds_publicEventDetails;
+        
+        /// <summary>
+        /// ds_keyword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_keyword;
         
         /// <summary>
         /// btn_printPage control.

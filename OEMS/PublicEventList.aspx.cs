@@ -57,5 +57,29 @@ namespace OEMS
                 dv_event_details.Visible = true;
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            gv_eventlist.DataSourceID = "ds_keyword";
+            gv_eventlist.DataBind();
+        }
+
+        protected void btn_clearSearch_Click(object sender, EventArgs e)
+        {
+            gv_eventlist.DataSourceID = "gv_ds_publicEvents";
+            gv_eventlist.DataBind();
+            txt_keyword.Text = "";
+        }
+
+        protected void btn_showMap_Click(object sender, EventArgs e)
+        {
+            // FETCH THE LOCATION FROM DETAILS VIEW
+            string location = dv_event_details.Rows[5].Cells[1].Text.ToString();
+            string city = dv_event_details.Rows[6].Cells[1].Text.ToString();
+            string province = dv_event_details.Rows[7].Cells[1].Text.ToString();
+            string address = location + "," + city + "," + province;
+            // REDIRECT TO THE MAP WITH THE ADDRESS PARAMETER
+            Response.Redirect("~/map.html?address=" + address);
+        }
     }
 }

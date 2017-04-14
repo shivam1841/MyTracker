@@ -6,6 +6,21 @@
     <div align="center">
         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="My Events" Font-Bold="True" Font-Names="Goudy Stout" Font-Size="18pt"></asp:Label>
         <hr />
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="Search for a keyword:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txt_keyword" runat="server" Width="130px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+                &nbsp;<asp:Button ID="btn_clearSearch" runat="server" Text="Clear Search" OnClick="btn_clearSearch_Click" />
+                </td>
+            </tr>
+        </table>
+        <hr />
         <asp:GridView ID="gv_eventlist" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="event_id" DataSourceID="gv_ds_cloudDB" PageSize="5" AllowSorting="True" SelectedIndex="0" Width="446px" OnSelectedIndexChanged="gv_eventlist_SelectedIndexChanged">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
@@ -27,6 +42,12 @@
         <asp:SqlDataSource ID="gv_ds_cloudDB" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_location], [event_activity] FROM [event] WHERE ([user_name] = @user_name)">
             <SelectParameters>
                 <asp:SessionParameter Name="user_name" SessionField="username" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="ds_keyword" runat="server" ConnectionString="Data Source=mytracker.database.windows.net;Initial Catalog=myTracker;Persist Security Info=True;User ID=harsh;Password=Admin@mytracker" SelectCommand="SELECT event_id, event_name, event_location, event_activity, event_city FROM event WHERE (user_name = @user_name) AND (event_name LIKE '%' + @keyword + '%') OR (user_name = @user_name) AND (event_activity LIKE '%' + @keyword + '%') OR (user_name = @user_name) AND (event_location LIKE '%' + @keyword + '%') OR (user_name = @user_name) AND (event_description LIKE '%' + @keyword + '%') OR (user_name = @user_name) AND (event_city LIKE N'%' + @keyword + N'%') OR (user_name = @user_name) AND (event_name LIKE N'%' + @keyword + N'%')">
+            <SelectParameters>
+                <asp:SessionParameter Name="user_name" SessionField="username" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="keyword" PropertyName="Text" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:Label ID="Label2" runat="server" ForeColor="Blue" Text="(Select event to view detailed information)"></asp:Label>
@@ -58,22 +79,44 @@
                     </asp:DetailsView>
                 </td>
             </tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
             <tr>
                 <td>
                     <asp:Button ID="btn_showMap" runat="server" Text="View on map" OnClick="btn_showMap_Click" />
                 </td>
             </tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
         </table>
         <asp:SqlDataSource ID="lv_ds_eventDetails" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [event_id], [event_name], [event_description], [start_date], [end_date], [event_location], [event_city], [event_province], [event_activity], [participant], [public] FROM [event] WHERE ([event_id] = @event_id)">
             <SelectParameters>

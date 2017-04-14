@@ -66,14 +66,42 @@ namespace OEMS.AdminPanel
 
         protected void btn_block_Click(object sender, EventArgs e)
         {
-            con.Open();
-            sql = "UPDATE [user] SET [isBlocked] = @status WHERE [user_name] = @username";
-            cmd = new SqlCommand(sql, con);
-            cmd.Parameters.Add(new SqlParameter("status", "yes"));
-            cmd.Parameters.Add(new SqlParameter("username", username));
-            cmd.ExecuteNonQuery();
-            lbl_response.Visible = true;
-            con.Close();
+            // TOGGLE BLOCK/ UNBLOCK STATUS
+            if (dv_userDetails.Rows[12].Cells[1].Text.ToString() == "no")
+            {
+                con.Open();
+                sql = "UPDATE [user] SET [isBlocked] = @status WHERE [user_name] = @username";
+                cmd = new SqlCommand(sql, con);
+                cmd.Parameters.Add(new SqlParameter("status", "yes"));
+                cmd.Parameters.Add(new SqlParameter("username", username));
+                cmd.ExecuteNonQuery();
+
+                lbl_response.Text = "User blocked successfully. . .";
+                lbl_response.ForeColor = System.Drawing.Color.Red;
+                lbl_response.Visible = true;
+                con.Close();
+
+                // UPDATE DATA
+                gv_userReport.DataBind();
+                dv_userDetails.DataBind();
+            }
+            else
+            {
+                con.Open();
+                sql = "UPDATE [user] SET [isBlocked] = @status WHERE [user_name] = @username";
+                cmd = new SqlCommand(sql, con);
+                cmd.Parameters.Add(new SqlParameter("status", "no"));
+                cmd.Parameters.Add(new SqlParameter("username", username));
+                cmd.ExecuteNonQuery();
+                lbl_response.Text = "User unblocked successfully. . .";
+                lbl_response.ForeColor = System.Drawing.Color.Blue;
+                lbl_response.Visible = true;
+                con.Close();
+
+                // UPDATE DATA
+                gv_userReport.DataBind();
+                dv_userDetails.DataBind();
+            }
         }
     }
 }

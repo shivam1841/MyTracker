@@ -83,5 +83,47 @@ namespace OEMS
             // REDIRECT TO THE MAP WITH THE ADDRESS PARAMETER
             Response.Redirect("~/map.html?address=" + address);
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            gv_eventlist.DataSourceID = "ds_keyword";
+            gv_eventlist.DataBind();
+            
+            // set the title
+            if (gv_eventlist.Rows.Count == 0)
+            {
+                Label2.Text = "No events to display";
+                dv_event_details.Visible = false;
+                Label3.Visible = false;
+                HyperLink1.Visible = false;
+            }
+            else
+            {
+                Label2.Text = "(Select event to view detailed information)";
+                dv_event_details.Visible = true;
+                Label3.Visible = true;
+                HyperLink1.Visible = true;
+
+                string event_id;
+                // ASSIGN SELECTED VALUE FROM GRIDVIEW
+                try
+                {
+                    event_id = gv_eventlist.SelectedValue.ToString();
+                }
+                catch (Exception)
+                {
+                    event_id = "0";
+                }
+
+                HyperLink1.NavigateUrl = "ManageEvent.aspx?event_id=" + event_id;
+            }
+        }
+
+        protected void btn_clearSearch_Click(object sender, EventArgs e)
+        {
+            gv_eventlist.DataSourceID = "gv_ds_cloudDB";
+            gv_eventlist.DataBind();
+            txt_keyword.Text = "";
+        }
     }
 }
