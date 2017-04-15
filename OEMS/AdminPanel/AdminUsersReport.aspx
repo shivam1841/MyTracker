@@ -6,6 +6,26 @@
     <div align="center">
         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="Users Report" Font-Bold="True" Font-Names="Goudy Stout" Font-Size="18pt"></asp:Label>
         <hr />
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="Search for a keyword:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txt_keyword" runat="server" Width="130px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+                &nbsp;<asp:Button ID="btn_clearSearch" runat="server" Text="Clear Search" OnClick="btn_clearSearch_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    (ex: search "yes" to find blocked users or vice-versa)
+                </td>
+            </tr>
+        </table>
+        <hr />
         <asp:GridView ID="gv_userReport" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="Groove" BorderWidth="5px" CellPadding="3" CellSpacing="2" DataKeyNames="user_name" DataSourceID="gv_ds_userReport_admin" PageSize="7" SelectedIndex="0" OnSelectedIndexChanged="gv_userReport_SelectedIndexChanged">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
@@ -27,11 +47,22 @@
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
         <asp:SqlDataSource ID="gv_ds_userReport_admin" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [user_name], [first_name], [last_name], [address1], [state], [email] FROM [user]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ds_keyword" runat="server" ConnectionString="<%$ ConnectionStrings:myTrackerConnectionString %>" SelectCommand="SELECT [user_name], [first_name], [last_name], [address1], [state], [email] FROM [user] WHERE (([first_name] LIKE '%' + @first_name + '%') OR ([last_name] LIKE '%' + @last_name + '%') OR ([user_name] LIKE '%' + @user_name + '%') OR ([address1] LIKE '%' + @address1 + '%') OR ([address2] LIKE '%' + @address2 + '%') OR ([country] LIKE '%' + @country + '%') OR ([email] LIKE '%' + @email + '%') OR ([gender] LIKE '%' + @gender + '%') OR ([isBlocked] = @isBlocked))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="txt_keyword" Name="first_name" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="last_name" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="user_name" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="address1" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="address2" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="country" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="email" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="gender" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txt_keyword" Name="isBlocked" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
     <hr />
     <div align="center">
-        <asp:Label ID="lbl_status" runat="server" Text="User is blocked" ForeColor="Red" Font-Size="14pt"></asp:Label>
-        <br />
         <br />
         <asp:DetailsView ID="dv_userDetails" runat="server" Height="50px" Width="380px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderStyle="Groove" BorderWidth="5px" CellPadding="5" DataKeyNames="user_name" DataSourceID="dv_ds_userDetails_admin" GridLines="Horizontal" HeaderText="User Details" ForeColor="Black" HorizontalAlign="Center">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />

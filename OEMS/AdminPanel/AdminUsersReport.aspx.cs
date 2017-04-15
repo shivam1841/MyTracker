@@ -103,5 +103,18 @@ namespace OEMS.AdminPanel
                 dv_userDetails.DataBind();
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            gv_userReport.DataSourceID = "ds_keyword";
+            gv_userReport.DataBind();
+        }
+
+        protected void btn_clearSearch_Click(object sender, EventArgs e)
+        {
+            gv_userReport.DataSourceID = "gv_ds_userReport_admin";
+            gv_userReport.DataBind();
+            txt_keyword.Text = "";
+        }
     }
 }

@@ -22,6 +22,42 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// txt_keyword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_keyword;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// btn_clearSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_clearSearch;
+        
+        /// <summary>
         /// gv_userReport control.
         /// </summary>
         /// <remarks>
@@ -40,13 +76,13 @@ namespace OEMS.AdminPanel {
         protected global::System.Web.UI.WebControls.SqlDataSource gv_ds_userReport_admin;
         
         /// <summary>
-        /// lbl_status control.
+        /// ds_keyword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_status;
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_keyword;
         
         /// <summary>
         /// dv_userDetails control.

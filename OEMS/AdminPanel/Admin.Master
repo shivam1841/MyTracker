@@ -27,9 +27,7 @@
                                 <DynamicSelectedStyle BackColor="#FFCC66" />
                                 <Items>
                                     <asp:MenuItem Text="Monitor User" Value="Monitor User"></asp:MenuItem>
-                                    <asp:MenuItem Text="Manage User" Value="Manage User"></asp:MenuItem>
                                     <asp:MenuItem Text="Monitor Event" Value="Monitor Event"></asp:MenuItem>
-                                    <asp:MenuItem Text="Manage Event" Value="Manage Event"></asp:MenuItem>
                                     <asp:MenuItem Text="Send Email" Value="Send Email"></asp:MenuItem>
                                     <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
                                 </Items>
