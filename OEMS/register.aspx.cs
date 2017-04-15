@@ -169,7 +169,7 @@ namespace OEMS
                                         lbl_error_message.Text = null;
                                         lbl_error_message.Visible = false;
 
-                                        sql = "INSERT INTO [user] VALUES(@userName, @Password, @first_name, @last_name, @gender, @address1, @address2, @province, @country, @security_question, @security_answer, @email)";      // insert statement
+                                        sql = "INSERT INTO [user] VALUES(@userName, @Password, @first_name, @last_name, @gender, @address1, @address2, @province, @country, @security_question, @security_answer, @email, @isBlocked)";      // insert statement
                                         cmd = new SqlCommand(sql, con);
 
                                         // set parameters
@@ -185,6 +185,7 @@ namespace OEMS
                                         cmd.Parameters.Add(new SqlParameter("security_question", security_question));
                                         cmd.Parameters.Add(new SqlParameter("security_answer", security_answer));
                                         cmd.Parameters.Add(new SqlParameter("email", txt_email.Text.Trim()));
+                                        cmd.Parameters.Add(new SqlParameter("isBlocked", "no"));
 
                                         cmd.ExecuteNonQuery();
                                         

@@ -232,6 +232,7 @@
     <Content Include="map.html" />
     <Content Include="Organizer.Master" />
     <Content Include="AdminPanel\Admin.Master" />
+    <None Include="Properties\PublishProfiles\mytracker-comp313p - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="participating_events.aspx" />
     <Content Include="PublicEventList.aspx" />

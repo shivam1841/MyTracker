@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mytracker-comp313p" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-OEMS-20170205031550.mdf;Initial Catalog=aspnet-OEMS-20170205031550;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="myTrackerConnectionString-Web.config Connection String" description="" value="Data Source=mytracker.database.windows.net;Initial Catalog=myTracker;Persist Security Info=True;User ID=harsh;Password=Admin@mytracker" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myTrackerConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="myTracker_DBConnectionString-Web.config Connection String" description="" value="Data Source=mytracker.database.windows.net;Initial Catalog=myTracker;User ID=harsh;Password=Admin@mytracker" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myTracker_DBConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

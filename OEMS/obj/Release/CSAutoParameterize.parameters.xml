@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-OEMS-20170205031550.mdf;Initial Catalog=aspnet-OEMS-20170205031550;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="myTracker_DBConnectionString-Web.config Connection String" description="myTracker_DBConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-6DAVLBI\MYCONNECTION;Initial Catalog=myTracker_DB;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myTracker_DBConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="myTrackerConnectionString-Web.config Connection String" description="myTrackerConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=mytracker.database.windows.net;Initial Catalog=myTracker;Persist Security Info=True;User ID=harsh;Password=Admin@mytracker" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\harsh\\OneDrive\\Documents\\Visual\ Studio\ 2015\\Projects\\OEMS\\OEMS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myTrackerConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
